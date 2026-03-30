@@ -2,6 +2,8 @@
 #define TAREA_H
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_NOMBRE 64
 

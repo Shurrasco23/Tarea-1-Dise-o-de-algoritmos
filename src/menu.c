@@ -18,7 +18,10 @@ void menu(){
         printf("|                                                              |\n");
         printf(" --------------------------------------------------------------\n");
 
-        scanf("%d", &eleccion);
+        while (scanf("%d", &eleccion)!=1){
+            printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
+            while(getchar() != '\n'); // Limpiar el buffer de entrada
+        }
 
         switch (eleccion){
 

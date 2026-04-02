@@ -18,7 +18,7 @@ typedef struct{
 }Deportista;
 
 
-
+void leer_nombres_y_apellidos();
 void CreaCsv();
 void menu();
 void OrdenaCsv();

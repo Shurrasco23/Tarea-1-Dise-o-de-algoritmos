@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -I./includes
 BUILD_DIR = build
 
-SOURCES = main.c src/commons.c src/csv.c src/menu.c
+SOURCES = main.c src/commons.c src/csv.c src/menu.c src/sorting.c src/search.c
 OBJECTS = $(SOURCES:%.c=$(BUILD_DIR)/%.o)
 EXECUTABLE = tarea1
 

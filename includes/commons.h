@@ -13,13 +13,16 @@
 typedef struct{
     int ID;
     char nombre[MAX_NOMBRE];
-    char equipo[MAX_NOMBRE];
+    char equipo[MAX_EQUIPO];
     double puntaje;
     int cantidadCompetencias;
 } Deportista;
 
 extern Deportista* deportistas; // Declaración del arreglo global de deportistas
 extern int cantItems; // Declaración del contador global de deportistas
+
+// Callback para manejar el ordenamiento por diferentes campos
+typedef int (*Comparador)(const Deportista* a, const Deportista* b);
 
 // CSV
 void LeerNombresApellidos();
@@ -28,8 +31,18 @@ void LeerDeportistas(const char* filename);
 int ExtraerCantidadDeFilename(const char* filename);
 // Menu 
 void Menu();
-// Algoritmos de ordenamiento y busqueda
 void OrdenaCsv();
 void BuscarPorID();
 void Ranking();
+void showFirst10Deportistas();
+// Algoritmos de ordenamiento}
+// Callbacks para ordenamiento
+int CmpPorID(const Deportista* a, const Deportista* b);
+int CmpPorNombre(const Deportista* a, const Deportista* b);
+int CmpPorEquipo(const Deportista* a, const Deportista* b);
+int CmpPorPuntaje(const Deportista* a, const Deportista* b);
+int CmpPorCompetencias(const Deportista* a, const Deportista* b);
+// Bubble Sort con callback
+void bubbleSort(Deportista* arr, int size, Comparador cmp);
+
 #endif

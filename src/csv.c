@@ -47,7 +47,6 @@ void LeerNombresApellidos(){
 
 void CreaCsv(int itemsPorCrear){
 
-    int id = 1;
     int puntaje=0, cantidadCompetencias=0;
     char pathCsv[1024];
 
@@ -68,19 +67,22 @@ void CreaCsv(int itemsPorCrear){
     }
 
     fprintf(archivo,"ID,Nombre,Equipo,Puntaje,cantidadCompetencias\n");
-    for (int i = 0; i < totalNombres; i++){
-        for (int j = 0; j < totalApellidos; j++){
-            puntaje = rand() % 100;
-            cantidadCompetencias = rand() % 5000;
-            fprintf(archivo, "%d,%s %s, Huachipato,%d,%d\n", id, nombres[i], apellidos[j], puntaje, cantidadCompetencias);
-            id++;
-        }
+    for (int i = 1; i <= itemsPorCrear; i++){
+        int randomNombre = rand() % totalNombres;
+        int randomApellido = rand() % totalApellidos;
+        puntaje = rand() % 100;
+        cantidadCompetencias = rand() % 5000;
+        fprintf(
+            archivo, "%d,%s %s, Huachipato,%d,%d\n", 
+            i, nombres[randomNombre], apellidos[randomApellido], puntaje, cantidadCompetencias
+        );
     }
 
     fclose(archivo);
-    printf("\033[0;32mCSV de deportistas creado con %d registros.\033[0m\n", id - 1);
+    printf("\033[0;32mCSV de deportistas creado con %d registros.\033[0m\n", itemsPorCrear);
 }
 
+// Carga un CSV de
 void LeerDeportistas(const char* filename){
 
     int currItem = 0;
@@ -141,13 +143,14 @@ void LeerDeportistas(const char* filename){
     printf("\033[0;32mDeportistas cargados: %d\033[0m\n", currItem);
 }
 
+// Función para extraer la cantidad de items del nombre del archivo.
 int ExtraerCantidadDeFilename(const char* filename) {
-    // Expected format: "deportistas123.csv"
+    // Formato esperado: "deportistas123.csv"
     int count = 0;
     if (sscanf(filename, "deportistas%d.csv", &count) == 1) {
         return count;
     }
-    return -1;  // Error: couldn't parse
+    return -1;  // Error: no se pudo extraer la cantidad
 }
 
 void OrdenaCsv(){

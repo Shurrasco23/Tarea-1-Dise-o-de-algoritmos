@@ -36,12 +36,26 @@ void Menu(){
                 break;
 
             case 2:
-                LeerDeportistas("deportistas238143.csv");
+                LeerDeportistas("deportistas500.csv");
                 break;
 
             case 3:
                  // Cargar deportistas desde un CSV específico (puede ser dinámico)
                 OrdenaCsv();
+                printf("Cantidad de deportistas cargados: %d\n", cantItems);
+                bubbleSort(deportistas, cantItems, CmpPorPuntaje);
+                printf("\033[0;32mDeportistas ordenados por Puntaje.\033[0m\n");
+                showFirst10Deportistas();
+                bubbleSort(deportistas, cantItems, CmpPorNombre);
+                printf("\033[0;32mDeportistas ordenados por Nombre.\033[0m\n");
+                showFirst10Deportistas();
+                bubbleSort(deportistas, cantItems, CmpPorEquipo);
+                printf("\033[0;32mDeportistas ordenados por Equipo.\033[0m\n");
+                showFirst10Deportistas();
+                bubbleSort(deportistas, cantItems, CmpPorCompetencias);
+                printf("\033[0;32mDeportistas ordenados por Competencias.\033[0m\n");
+                showFirst10Deportistas();
+
                 break;
 
             case 4:

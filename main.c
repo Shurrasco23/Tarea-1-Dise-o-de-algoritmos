@@ -1,6 +1,6 @@
-#include "includes/tarea.h"
+#include "includes/commons.h"
 
 int main(){
-    menu();
+    Menu();
     return 0;
 }

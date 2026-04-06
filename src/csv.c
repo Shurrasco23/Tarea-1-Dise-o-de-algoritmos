@@ -113,11 +113,12 @@ void ListarCsvDisponibles(){
         
         snprintf(path, sizeof(path), "db/deportistas%s.csv", line); // Crear path completo
         
+        // Verificar si el archivo existe
         if (access(path, F_OK) == 0) {
             printf("%d.  %s\n", cont, line);
             fprintf(temp, "%s\n", line); // Guardar solo los que existen
         } else {
-            printf("File does not exist\n");
+            printf("Opción %s no encontrada, se ha eliminado.\n", line);
         }
     }
 

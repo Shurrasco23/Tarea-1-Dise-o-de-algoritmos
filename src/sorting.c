@@ -18,3 +18,15 @@ void bubbleSort(Deportista* arr, int size, Comparador cmp) {
         if (swapped == 0) break; // No se hicieron intercambios, el arreglo ya está ordenado
     }
 }
+
+void insertionSort(Deportista* arr, int size, Comparador cmp) {
+    for (int i = 1; i < size; i++) {
+        Deportista key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && cmp(&arr[j], &key) > 0) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}

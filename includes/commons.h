@@ -46,5 +46,6 @@ int CmpPorPuntaje(const Deportista* a, const Deportista* b);
 int CmpPorCompetencias(const Deportista* a, const Deportista* b);
 // Bubble Sort con callback
 void bubbleSort(Deportista* arr, int size, Comparador cmp);
+void insertionSort(Deportista* arr, int size, Comparador cmp);
 
 #endif

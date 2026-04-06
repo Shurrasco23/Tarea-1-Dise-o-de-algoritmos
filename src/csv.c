@@ -4,8 +4,14 @@
 
 char nombres[MAX][50];
 char apellidos[MAX][50];
+char* equipos[] = {
+    "Huachipato", "Colo-Colo", "Universidad de Chile", 
+    "La Serena", "Everton", "Palestino"
+};
 int totalNombres = 0;
 int totalApellidos = 0;
+int totalEquipos = 6;
+
 
 void LeerNombresApellidos(){
 
@@ -73,8 +79,8 @@ void CreaCsv(int itemsPorCrear){
         puntaje = rand() % 100;
         cantidadCompetencias = rand() % 5000;
         fprintf(
-            archivo, "%d,%s %s, Huachipato,%d,%d\n", 
-            i, nombres[randomNombre], apellidos[randomApellido], puntaje, cantidadCompetencias
+            archivo, "%d,%s %s, %s ,%d,%d\n", 
+            i, nombres[randomNombre], apellidos[randomApellido], equipos[rand()%totalEquipos],puntaje, cantidadCompetencias
         );
     }
 

@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 
 #define MAX_NOMBRE 64
 #define MAX_EQUIPO 64
@@ -27,8 +28,9 @@ typedef int (*Comparador)(const Deportista* a, const Deportista* b);
 // CSV
 void LeerNombresApellidos();
 void CreaCsv(int itemsPorCrear);
-void LeerDeportistas(const char* filename);
+void LeerCsvDeportistas(const char* filename);
 int ExtraerCantidadDeFilename(const char* filename);
+void ListarCsvDisponibles();
 // Menu 
 void Menu();
 void OrdenaCsv();

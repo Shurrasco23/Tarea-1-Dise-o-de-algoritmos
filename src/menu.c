@@ -4,6 +4,9 @@ void Menu(){
 
     int eleccion = 0;
     int itemsPorCrear = 0;
+    int csvElegido = 0;
+    char path[1024];
+
     do {
 
         printf("\n");
@@ -36,28 +39,29 @@ void Menu(){
                 break;
 
             case 2:
-                LeerDeportistas("deportistas500.csv");
+                ListarCsvDisponibles();
+
+                while (csvElegido != -1){
+
+                    printf("Ingrese el tamaño de CSV que desea utilizar (-1 para salir): ");
+                    scanf(" %d", &csvElegido);
+                    snprintf(path, sizeof(path), "db/deportistas%d.csv", csvElegido);
+                    
+                    if (access(path, F_OK) == 0) {
+                        LeerCsvDeportistas(path); 
+                        break;  
+                    } else {
+                        printf("%d no es un tamaño válido\n", csvElegido);
+                    }
+                }
+
+                csvElegido = 0; // Reiniciar variable
                 break;
 
             case 3:
-                 // Cargar deportistas desde un CSV específico (puede ser dinámico)
                 OrdenaCsv();
-                printf("Cantidad de deportistas cargados: %d\n", cantItems);
-                bubbleSort(deportistas, cantItems, CmpPorPuntaje);
-                printf("\033[0;32mDeportistas ordenados por Puntaje.\033[0m\n");
-                showFirst10Deportistas();
-                bubbleSort(deportistas, cantItems, CmpPorNombre);
-                printf("\033[0;32mDeportistas ordenados por Nombre.\033[0m\n");
-                showFirst10Deportistas();
-                bubbleSort(deportistas, cantItems, CmpPorEquipo);
-                printf("\033[0;32mDeportistas ordenados por Equipo.\033[0m\n");
-                showFirst10Deportistas();
-                bubbleSort(deportistas, cantItems, CmpPorCompetencias);
-                printf("\033[0;32mDeportistas ordenados por Competencias.\033[0m\n");
-                showFirst10Deportistas();
-
                 break;
-
+                
             case 4:
                 BuscarPorID();
                 break;

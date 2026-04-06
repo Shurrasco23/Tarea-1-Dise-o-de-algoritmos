@@ -9,8 +9,8 @@ int totalApellidos = 0;
 
 void LeerNombresApellidos(){
 
-    FILE *archivoNombres = fopen("db/nombres.csv", "r"); // leer archivo Nombres.csv
-    FILE *archivoApellidos = fopen("db/apellidos.csv", "r"); // leer archivo Apellidos.csv
+    FILE *archivoNombres = fopen("db/tools/nombres.csv", "r"); // leer archivo Nombres.csv
+    FILE *archivoApellidos = fopen("db/tools/apellidos.csv", "r"); // leer archivo Apellidos.csv
 
     if (archivoNombres == NULL || archivoApellidos == NULL) {
         printf("Error al abrir los archivos de nombres o apellidos.\n");
@@ -80,10 +80,56 @@ void CreaCsv(int itemsPorCrear){
 
     fclose(archivo);
     printf("\033[0;32mCSV de deportistas creado con %d registros.\033[0m\n", itemsPorCrear);
+    
+    // Actualizar db/tools/opciones.csv
+    FILE *opciones = fopen("db/tools/opciones.csv", "a");
+    if (opciones != NULL) {
+        fprintf(opciones, "%d\n", itemsPorCrear);
+        fclose(opciones);
+    } else {
+        printf("Advertencia: No se pudo actualizar db/tools/opciones.csv\n");
+    }
 }
 
+void ListarCsvDisponibles(){
+    
+    int cont = 1;
+    char path[1024];
+    char line[128];
+    FILE *opciones = fopen("db/tools/opciones.csv", "r");
+    if (opciones == NULL) {
+        printf("Error al abrir db/tools/opciones.csv\n");
+        return;
+    }
+
+    // Queremos almacenar solo las opciones que realmente existen, para eso creamos un archivo temporal
+    // Luego cargamos al nuevo opciones.csv solo con las opciones válidas, eliminando las que no existen
+    FILE *temp = fopen("db/tools/opciones_temp.csv", "w");
+    
+    printf("\033[0;36mTamaños de CSV disponibles en db/:\033[0m\n");
+
+    while (fgets(line, sizeof(line), opciones)) {
+        line[strcspn(line, "\r\n")] = 0; // Eliminar saltos de línea
+        
+        snprintf(path, sizeof(path), "db/deportistas%s.csv", line); // Crear path completo
+        
+        if (access(path, F_OK) == 0) {
+            printf("%d.  %s\n", cont, line);
+            fprintf(temp, "%s\n", line); // Guardar solo los que existen
+        } else {
+            printf("File does not exist\n");
+        }
+    }
+
+    fclose(opciones);
+    fclose(temp);
+
+    remove ("db/tools/opciones.csv"); // Eliminar archivo original
+    rename ("db/tools/opciones_temp.csv", "db/tools/opciones.csv"); // Renombrar archivo temporal
+
+}
 // Carga un CSV de
-void LeerDeportistas(const char* filename){
+void LeerCsvDeportistas(const char* filename){
 
     int currItem = 0;
     char linea[1024];
@@ -97,14 +143,10 @@ void LeerDeportistas(const char* filename){
 
     printf("\033[0;33mCargando %d deportistas desde '%s'...\033[0m\n", cantItems, filename);
 
-    // Crear path completo
-    char path[1024];
-    snprintf(path, sizeof(path), "db/%s", filename);
-
     // Abrir archivo
-    FILE *archivo = fopen(path, "r");
+    FILE *archivo = fopen(filename, "r");
     if (archivo == NULL) {
-        printf("Error al abrir db/%s\n", filename);
+        printf("Error al abrir %s\n", filename);
         return;
     }
 
@@ -145,9 +187,9 @@ void LeerDeportistas(const char* filename){
 
 // Función para extraer la cantidad de items del nombre del archivo.
 int ExtraerCantidadDeFilename(const char* filename) {
-    // Formato esperado: "deportistas123.csv"
+    // Formato esperado: "db/deportistas123.csv"
     int count = 0;
-    if (sscanf(filename, "deportistas%d.csv", &count) == 1) {
+    if (sscanf(filename, "db/deportistas%d.csv", &count) == 1) {
         return count;
     }
     return -1;  // Error: no se pudo extraer la cantidad

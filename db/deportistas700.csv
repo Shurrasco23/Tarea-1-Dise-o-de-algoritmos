@@ -1,0 +1,701 @@
+ID,Nombre,Equipo,Puntaje,cantidadCompetencias
+1,Fabricio Concha, Colo-Colo ,84,1218
+2,Khalil Marquet, Everton ,21,1367
+3,Mario Larrondo, Colo-Colo ,81,1882
+4,Renato Cabello, Colo-Colo ,84,628
+5,Arcadio Ceballos, Universidad de Chile ,48,745
+6,Valeriano Polanco, Palestino ,17,369
+7,Melchor Leonelli, Universidad de Chile ,88,2262
+8,Clemente2 Albornoz, Palestino ,5,1791
+9,Telmo Monsalve, La Serena ,93,54
+10,Lisandro Melgarejo, Universidad de Chile ,47,3837
+11,Gerardo Faundez, Huachipato ,76,2767
+12,Flavio2 Bordeu, Palestino ,98,4231
+13,Aldo Larrea, Palestino ,11,3198
+14,Anselmo Miralles, Colo-Colo ,80,727
+15,Pascasio Tapia, Everton ,19,4403
+16,Bonifacio Macaya, Palestino ,21,1062
+17,Isaac Inostroza, Universidad de Chile ,10,793
+18,Plutarco Guerra, Colo-Colo ,54,3319
+19,Macario Santos, Huachipato ,52,1140
+20,Pascual Landarretche, Palestino ,44,4756
+21,Ariel Velasquez, Huachipato ,93,4974
+22,Fausto2 Moya, Palestino ,76,3173
+23,Yandel Duran, Everton ,88,332
+24,Santiago Catrileo, La Serena ,96,4094
+25,Clarence DelFierro, Everton ,2,4792
+26,Esteban Mogollon, Palestino ,74,1626
+27,Franco Pedreros, Huachipato ,41,4061
+28,Edwin Molina, Huachipato ,97,2590
+29,Gustavo Andrade, Huachipato ,76,3692
+30,Timoteo Lobos2, Colo-Colo ,2,608
+31,Isaac Mansilla, Huachipato ,98,3281
+32,Ignacio Canales, Everton ,59,3789
+33,Arcadio Huilipan, Universidad de Chile ,72,1476
+34,Noriel Bernal, Colo-Colo ,79,3577
+35,Lorenzo2 Leiva, Colo-Colo ,95,1942
+36,Demian Torres, La Serena ,5,4946
+37,Liam Escobar, Universidad de Chile ,15,583
+38,Emiliano Iturriaga, Everton ,70,2966
+39,Lautaro Lazcano, Colo-Colo ,95,1685
+40,Jimena Musalem, Huachipato ,71,3945
+41,Valeriano Tejos, Colo-Colo ,75,1598
+42,Dionel Riquelme, Universidad de Chile ,63,1205
+43,Urbano Sanhueza, Palestino ,65,1745
+44,Telmo Oliva, Colo-Colo ,74,4046
+45,Gisela Escudero, Everton ,76,4608
+46,Trifon Zapata, Universidad de Chile ,9,529
+47,Dante Naranjo, Palestino ,87,4530
+48,Flavio2 Saez, Colo-Colo ,27,2007
+49,Sabino Melgarejo, Palestino ,77,2384
+50,Jordy Aguilar, Huachipato ,40,4077
+51,Israel Espinoza, Huachipato ,17,2491
+52,Doroteo Lopez, Huachipato ,77,2774
+53,Geronimo2 Barrientos, La Serena ,14,2188
+54,Alonso benito, La Serena ,89,627
+55,Zosimo Canales, Colo-Colo ,29,954
+56,Froilan Lobos2, La Serena ,95,209
+57,Orfelio Venegas, Palestino ,27,222
+58,Yago Mujica, Colo-Colo ,17,1555
+59,Clemente2 Chacon, Universidad de Chile ,42,1013
+60,Prudencio Luque, Universidad de Chile ,80,842
+61,Rodrigo Bianchi, Huachipato ,38,1253
+62,Joel2 Melendez, La Serena ,33,168
+63,Ramiro Toro, Palestino ,3,1546
+64,Erasmo2 Moroni, La Serena ,82,287
+65,Zenon Marusic, Everton ,39,1837
+66,Juanito Astorga, Huachipato ,65,1667
+67,Jeremias Torrealba, Colo-Colo ,55,1548
+68,Adan Tejos, Everton ,13,864
+69,Yandel Ilabaca, Palestino ,63,4647
+70,Cristobal2 Retamal, Colo-Colo ,57,4241
+71,Camilo Godoy, Huachipato ,96,1131
+72,Laureano Guerrero, Colo-Colo ,69,3566
+73,Homero Jerez, Huachipato ,75,1012
+74,Fabian Avendano, Everton ,97,1532
+75,Obdulio Leiton, Everton ,43,2955
+76,Gildardo Lautaro, Colo-Colo ,94,3081
+77,Servando Zuniga, Universidad de Chile ,96,1200
+78,Eugenio2 Garay, Huachipato ,22,2344
+79,Aureliano Cardenas, Everton ,96,3135
+80,Anuar Cifuentes, Huachipato ,58,3621
+81,Laura Cifuentes, Universidad de Chile ,63,4862
+82,Jael Brito, Universidad de Chile ,34,3286
+83,Feliciano Mladinic, La Serena ,93,490
+84,Desiderio Estay, Colo-Colo ,96,4872
+85,Orlando Lautaro, Colo-Colo ,62,2212
+86,Jorge Ortiz, Everton ,73,4986
+87,Ulises Moreno2, La Serena ,71,2475
+88,Marcial Santana, Palestino ,5,725
+89,Romualdo Castillo, Everton ,96,4371
+90,Guillermo Lagos, Palestino ,25,387
+91,Noe Moena, Huachipato ,29,3849
+92,Isidro Toledo, Universidad de Chile ,53,3773
+93,Axel Medina, Huachipato ,21,3782
+94,Miguel Farias, Universidad de Chile ,79,45
+95,Marcelo Millar, Everton ,20,980
+96,Ciro Contreras, La Serena ,67,4806
+97,Bonifacio Galaz, Universidad de Chile ,15,2394
+98,Segismundo Torrealba, Everton ,23,2288
+99,Aureliano Baeza, Colo-Colo ,5,2960
+100,Dorian Araya, Huachipato ,58,2748
+101,Marcelo2 Retamal, La Serena ,69,4881
+102,Romualdo Vergara, Universidad de Chile ,88,2934
+103,Levi Inostroza, Everton ,17,1266
+104,Nemesio Latapiat, Universidad de Chile ,39,1339
+105,Perfecto Morales, Colo-Colo ,90,2064
+106,Homero Delgado, Colo-Colo ,43,1334
+107,Faustino Marenzi, La Serena ,17,1210
+108,Josias Rios, La Serena ,41,4075
+109,Cipriano Alarcon, Palestino ,10,1579
+110,Flavio2 Sobarzo, Universidad de Chile ,47,1393
+111,Jeremias Rubio, Everton ,16,2231
+112,Ramon Messina, Palestino ,53,2403
+113,Waldo Palacios, Palestino ,39,908
+114,Froilan Gandarillas, La Serena ,36,3260
+115,Ruben Campillay, Universidad de Chile ,96,1110
+116,Cirilo Mirosevic, Everton ,49,4292
+117,Inigo Balboa, Colo-Colo ,14,951
+118,Ciro2 Muller, Universidad de Chile ,72,1688
+119,Inigo Campos, La Serena ,14,956
+120,Matias Morales2, Universidad de Chile ,29,1910
+121,Tadeo Cifuentes, Everton ,58,2399
+122,Xavier Montesinos, Universidad de Chile ,36,4413
+123,Blas Morand, Everton ,65,1313
+124,Julian2 Cea, Universidad de Chile ,67,150
+125,Romualdo Bordeu, Huachipato ,67,3399
+126,Ubaldo Maza, La Serena ,51,2036
+127,Vigilio Yanez, Universidad de Chile ,97,98
+128,Washington Mateluna, Universidad de Chile ,30,357
+129,Marcos Catricura, Colo-Colo ,28,4131
+130,Ismael2 Carrera, Everton ,21,2051
+131,Amador Valdes, Universidad de Chile ,84,281
+132,Cosme2 Tejos, La Serena ,65,4011
+133,Rito Illanes, Palestino ,14,3701
+134,Kai Concha, Palestino ,11,482
+135,Javier2 Contreras, Huachipato ,35,1020
+136,Lucas2 Mazzoni, Universidad de Chile ,94,877
+137,Patricio Mayorga, Universidad de Chile ,48,394
+138,Magn Lopez, Huachipato ,59,3005
+139,Ariel2 Castro, Universidad de Chile ,17,3297
+140,Adrian Catrileo, Everton ,32,1577
+141,Timoteo Cuevas, La Serena ,85,99
+142,Karen Marin, Palestino ,97,3063
+143,Emerico Fuenzalida, Everton ,76,1506
+144,Gael2 Mondaca, Huachipato ,74,2208
+145,Gustavo Leiva, Everton ,65,2409
+146,Magn Huenupi, Palestino ,94,4260
+147,Eriberto Maureira, Everton ,22,2568
+148,Loren Luque, Everton ,32,812
+149,Dorian Huilipan, Huachipato ,25,3946
+150,Guido Huichaman, Everton ,26,2572
+151,Rito Cartes, Everton ,49,2448
+152,Policarpo Maza, Everton ,1,4688
+153,Gildardo Rivera, Colo-Colo ,13,2328
+154,Amaro Orellana, Everton ,24,3673
+155,Orlando Carrera, Universidad de Chile ,78,4754
+156,Hernan2 Robles, La Serena ,39,3136
+157,Ciro2 Mesina, Colo-Colo ,40,2295
+158,Leandro2 Espina, Palestino ,43,1519
+159,Erick Olguin, Universidad de Chile ,49,3796
+160,Elias Cardenas, Universidad de Chile ,50,413
+161,Alan Huilipan, La Serena ,5,2388
+162,Macario Patino, Universidad de Chile ,47,1636
+163,Jesus Solis, Palestino ,5,2814
+164,Joaquin2 Duran, Huachipato ,18,3067
+165,Quintin Oyarzun, La Serena ,30,3796
+166,Enrique Marro, Everton ,89,2538
+167,Dario3 Marsan, Huachipato ,39,2108
+168,Eusebio Avendano, Universidad de Chile ,86,434
+169,Mario2 Baeza, La Serena ,76,1278
+170,Wilfredo Krebs, Universidad de Chile ,7,3175
+171,Marcial Serrano, La Serena ,25,1793
+172,Nicomedes Verdugo, Universidad de Chile ,4,2866
+173,Efren Castillo, Huachipato ,17,2694
+174,Homero Arias, Palestino ,32,1044
+175,Pelayo Huichalaf, La Serena ,75,4207
+176,Petronilo Cartes, Universidad de Chile ,50,810
+177,Jonathan Morand, Palestino ,15,2850
+178,Ubaldo Sobarzo, Colo-Colo ,49,4339
+179,Aureliano Altamirano, Colo-Colo ,11,986
+180,Ulpiano Benavides, Universidad de Chile ,72,4373
+181,Miguelangel Ruiz, Everton ,57,3367
+182,Edelmiro Mendez, Palestino ,23,1807
+183,Nicomedes Larrondo2, Everton ,5,30
+184,Tarsicio Cortinez, La Serena ,62,473
+185,Andres Echeverria, Colo-Colo ,1,4470
+186,Darwin Castillo, Everton ,25,765
+187,Carlos Mateluna, Palestino ,84,522
+188,Jonatan Cordova, Colo-Colo ,93,1017
+189,Elio Muller, Universidad de Chile ,69,4929
+190,Rogelio Chacon, Universidad de Chile ,79,4366
+191,Augusto Oyarzun, Universidad de Chile ,69,1387
+192,Alonso2 Zapata, Palestino ,55,2727
+193,Sancho Aguilar, Universidad de Chile ,53,4276
+194,Clarence Castillo, Huachipato ,96,1622
+195,Logan Minoletti, Universidad de Chile ,24,1903
+196,Alvaro Concha, La Serena ,29,3718
+197,Santiago Urrutia, Huachipato ,51,3877
+198,Rancel Gonzalez, Huachipato ,24,4954
+199,Emilio Bianchi, Huachipato ,2,3026
+200,Ignacio Olivares, La Serena ,93,3568
+201,Telmo Meyer, Everton ,72,1357
+202,Alonso2 Villagra, Universidad de Chile ,65,281
+203,Guillermo Leiva, Everton ,71,894
+204,Dennis Munoz2, La Serena ,49,2691
+205,Karen Balboa, Huachipato ,90,161
+206,Felix2 Melita, Everton ,46,3957
+207,Ariel2 Messina, Universidad de Chile ,8,4447
+208,Josue2 Markovic, Palestino ,48,3484
+209,Clarence Larrondo, Colo-Colo ,70,3138
+210,Jacinto Gutierrez, Everton ,62,4338
+211,Rancel Pincheira, Colo-Colo ,64,2099
+212,Mateo Millan, Colo-Colo ,97,3204
+213,Elian Carvajal, Palestino ,64,1963
+214,Aristides Barrientos, Huachipato ,75,1816
+215,Blas Krause, Colo-Colo ,93,1378
+216,Ismael2 Fuentes, Huachipato ,30,1028
+217,Gumersindo Kuschel, La Serena ,60,3894
+218,Boris Calfuqueo, Colo-Colo ,53,2920
+219,Teofilo Villaroel, Colo-Colo ,33,4090
+220,Leoncio Bocaz, Palestino ,21,4788
+221,Paulo Macchiavello, Universidad de Chile ,10,4932
+222,Ruperto2 Larrondo, Universidad de Chile ,46,1066
+223,Evaristo2 Villavicencio, Colo-Colo ,63,1916
+224,Valentin Fuentes, Universidad de Chile ,92,1605
+225,Jared Alveal, Everton ,87,3183
+226,Daniel Mendoza, Huachipato ,33,1351
+227,Blas Pizarro, Huachipato ,32,2970
+228,Mariana Mir, Palestino ,20,2357
+229,Primo Mimica, La Serena ,22,3810
+230,Escolastico Acosta, Universidad de Chile ,72,3506
+231,Desiderio2 Madrid, La Serena ,52,2276
+232,Matias2 Merino, Everton ,88,1759
+233,Demian Huerta, Everton ,96,3109
+234,Faustino Munoz2, La Serena ,48,2291
+235,Ariel2 Navarrete2, Huachipato ,42,1395
+236,Vidal Foncea, Colo-Colo ,66,2747
+237,Primo Leyton, Everton ,75,2790
+238,Jimena Millar, Universidad de Chile ,66,3754
+239,Cesar Moncada, Huachipato ,0,2073
+240,Humberto Larrea, Colo-Colo ,60,4042
+241,Ruperto Marsan, La Serena ,29,831
+242,Lino Lahsen, Palestino ,24,3200
+243,Dante Crespo, La Serena ,41,1218
+244,Ildefonso Pastene, La Serena ,50,4672
+245,Renzo Cornejo, Palestino ,22,2230
+246,Indalecio Uribe, La Serena ,17,3674
+247,Luciano2 Cordova, Huachipato ,35,3338
+248,Alan Mariangel, Universidad de Chile ,0,75
+249,Evaristo2 Salinas, Colo-Colo ,14,1247
+250,Israel Oyarzun, Colo-Colo ,26,1845
+251,Alex Meneses, Everton ,73,544
+252,Cristian Silva, Palestino ,83,3016
+253,Bruno Bertin, Universidad de Chile ,96,4685
+254,Jairo Inostroza, Everton ,36,2691
+255,Justino2 Sarabia, Colo-Colo ,33,426
+256,Jonas Becerra, La Serena ,2,152
+257,Cristobal2 Lazcano, Palestino ,95,3104
+258,Rogelio Morand, Huachipato ,76,537
+259,Dario3 Manosalva, Huachipato ,93,4009
+260,Roberto Ayala, Huachipato ,11,1393
+261,Marino Espina, Universidad de Chile ,93,2307
+262,Patricio Jeldres, La Serena ,6,444
+263,Jonathan Montesinos, Universidad de Chile ,6,4921
+264,Guido2 Huenchullan, Universidad de Chile ,79,2952
+265,Fernando Lemus, Everton ,55,4693
+266,Kenny Muller, Universidad de Chile ,27,3242
+267,Ulises DeLaCruz, La Serena ,53,964
+268,Alvaro Bocaz, Colo-Colo ,8,3343
+269,Escolastico Guerrero, Everton ,27,4700
+270,Borja Martinez, Everton ,21,3486
+271,Clemente2 Maluenda, Palestino ,97,492
+272,Heriberto Aravena, Palestino ,85,4802
+273,Leoncio Arcos, Universidad de Chile ,34,4287
+274,Faustino Concha, Everton ,49,2570
+275,Rito Salas, La Serena ,41,4631
+276,Rolando Mogollon, Colo-Colo ,43,3656
+277,Dennis Moya2, Colo-Colo ,63,3024
+278,Augusto Marusic, Universidad de Chile ,64,3331
+279,Teodoro Roco, Huachipato ,76,1867
+280,Menandro Lusardi, Palestino ,80,4867
+281,Camilo Coloma, Palestino ,14,2793
+282,Fidel Marsan, Huachipato ,41,3225
+283,Ivan2 Ortiz, Palestino ,33,3881
+284,Geronimo Aguilar, Colo-Colo ,25,1738
+285,Pelayo Sarabia, Colo-Colo ,80,2756
+286,Ubaldo Monsalve, Colo-Colo ,68,3216
+287,Eusebio Sanchez, Universidad de Chile ,64,3134
+288,Sabino Mirosevic, La Serena ,43,3761
+289,Feliciano2 Villavicencio, La Serena ,46,465
+290,Ovidio Espinoza, Universidad de Chile ,92,3801
+291,Karen Santibanez, Palestino ,50,4739
+292,Bernardo Poblete, Everton ,11,3506
+293,Agustin Soto, Colo-Colo ,9,2769
+294,Josafat Perez, Colo-Colo ,79,118
+295,Aitor Cabello, Palestino ,29,2719
+296,Policarpo Solis, La Serena ,58,3786
+297,Isaias Duran2, Palestino ,78,1138
+298,Calixto Maluenda, Everton ,9,527
+299,Tadeo Salas, La Serena ,11,3262
+300,Aaron Moffat, Huachipato ,93,4854
+301,Doroteo Cuevas, Colo-Colo ,6,3424
+302,Leonardo Larrea, Huachipato ,94,4783
+303,Octavio Luen, Everton ,50,4022
+304,Baltazar Naranjo, Palestino ,38,4397
+305,Aron Hernandez, Universidad de Chile ,49,3688
+306,Ovidio Navarro2, Palestino ,49,3248
+307,Rolando Chacana, La Serena ,49,363
+308,Felix Montero, Everton ,37,2694
+309,Enmeregildo Munoz2, Huachipato ,44,744
+310,Marcelo Eyzaguirre, Colo-Colo ,98,4545
+311,Gonzalo2 Larrondo2, Palestino ,27,717
+312,Olimpio Bertin, La Serena ,72,2240
+313,Valeriano Fuenzalida, La Serena ,66,2243
+314,Valerio Marfull, Palestino ,50,2422
+315,Liam Moroni, Everton ,23,1066
+316,Lautaro Acosta, Palestino ,92,4933
+317,Ramon DelReal, Universidad de Chile ,87,4048
+318,Raimundo benito, Colo-Colo ,41,4421
+319,Rolando Huichaman, Everton ,29,2983
+320,Erick Cerda, La Serena ,1,2941
+321,Ernesto Iturriaga, Colo-Colo ,11,4262
+322,Onofre Lira, La Serena ,53,315
+323,Joel Pino, Everton ,80,1262
+324,Galileo Moris, Colo-Colo ,75,2043
+325,Adriel Aguilar, Universidad de Chile ,46,4988
+326,Matias2 Maureira, Universidad de Chile ,65,1357
+327,Renzo Merello, Everton ,35,2324
+328,Primo Lahsen, Palestino ,55,2922
+329,Abel Cerda, Colo-Colo ,51,1918
+330,Moises Poblete, Universidad de Chile ,17,515
+331,Nestor Barra, La Serena ,72,247
+332,Mateo Morande, La Serena ,42,4533
+333,Lorenzo2 Plaza, Universidad de Chile ,57,2650
+334,Khalil Moriconi, Palestino ,17,1423
+335,Jordy Opazo, Everton ,86,1184
+336,Ariel Mendez, Palestino ,48,4962
+337,Gustavo Sandoval, Colo-Colo ,18,3537
+338,Marcial Huilinao, Palestino ,15,4475
+339,Ruben Aviles, Colo-Colo ,33,4738
+340,Esta Valenzuela, Huachipato ,12,4920
+341,Benito Montt, Colo-Colo ,38,939
+342,Menandro Alarcon, Universidad de Chile ,65,1218
+343,Franco Crespo, Everton ,10,1474
+344,Manuel Melivilu2, Colo-Colo ,73,4640
+345,Cipriano Barahona, Huachipato ,25,345
+346,Alfredo Merino, La Serena ,12,1282
+347,Galileo Pastene, Everton ,74,378
+348,Gisela Montalba, Palestino ,10,4380
+349,Roberto Ulloa, La Serena ,98,619
+350,Felix Larruy, Huachipato ,70,4843
+351,Isidora Arevalo, Colo-Colo ,4,183
+352,Ariel2 Melendez, Universidad de Chile ,54,827
+353,Gines Poblete, Universidad de Chile ,23,3249
+354,Leocadio Palacios, Huachipato ,98,2960
+355,Lorenzo2 Marquez, Universidad de Chile ,32,2615
+356,Gonzalo2 DeLaFuente, Colo-Colo ,84,2918
+357,Patricio Loyola, Universidad de Chile ,85,77
+358,Desiderio Mieres, Palestino ,64,2644
+359,Alfredo Maiz, Everton ,86,3575
+360,Abel Flores, Everton ,84,1135
+361,Magn DeLaCruz, Everton ,7,361
+362,Ladislao Martic, Huachipato ,53,1184
+363,Alberto Mieres, Universidad de Chile ,2,2019
+364,Mariano2 Farias, Huachipato ,74,276
+365,Escolastico Eyzaguirre, Huachipato ,26,3479
+366,Pancracio Lira, Colo-Colo ,81,4431
+367,Cristobal2 Marcone, Universidad de Chile ,3,3327
+368,Doroteo Navarro, La Serena ,33,1177
+369,Dimas Bascur, Colo-Colo ,20,4765
+370,Cesar Nancucheo, Everton ,93,4780
+371,Samir Loyola2, Palestino ,35,4825
+372,Ramon Alquinta, La Serena ,73,4020
+373,Lucio Catricura, Palestino ,14,831
+374,Jeremias Mejias, Huachipato ,98,4724
+375,Gisela Fuentes, Palestino ,43,2034
+376,Calixto Fuenzalida, La Serena ,31,3919
+377,Dimas2 Mesina, Huachipato ,94,272
+378,Zacarias Salgado, Everton ,68,1824
+379,Marcos2 Maureira, Universidad de Chile ,76,3638
+380,Mariana Eyzaguirre, Colo-Colo ,39,4797
+381,Mario2 Loyola2, Everton ,40,2118
+382,Dimas Larrondo2, Huachipato ,37,324
+383,Daniel Mateluna, Universidad de Chile ,87,3752
+384,Marcelo Belmar, Everton ,98,852
+385,Mariano Nancucheo, Huachipato ,81,1510
+386,Juanmanuel Ruiz, Huachipato ,95,56
+387,Tobias Lahsen, Palestino ,20,2340
+388,Hector2 Cofre, Huachipato ,46,3854
+389,Ariel Chacon, Universidad de Chile ,20,1002
+390,Bernardo Gonzalez, Palestino ,72,1605
+391,Elian Torrealba, La Serena ,67,986
+392,Antonio Oyarzun, Colo-Colo ,10,1928
+393,Waldo Luque, Huachipato ,42,140
+394,Valentin2 Espinosa, Colo-Colo ,54,1990
+395,Lorenzo2 Meruane, Palestino ,27,937
+396,Alfonso Cayuqueo, Palestino ,94,3820
+397,Severiano Bastias, La Serena ,36,4752
+398,Rancel Villalobos, Colo-Colo ,14,247
+399,Fortunato2 Lautaro, Universidad de Chile ,93,3319
+400,Arturo Troncoso, La Serena ,17,2620
+401,Lucas Bianchi, Everton ,6,3112
+402,Tristan Velasquez, La Serena ,19,4459
+403,Waldo Gallegos, Huachipato ,6,2057
+404,Favio Huerta, Huachipato ,81,4736
+405,Julian Marin, Colo-Colo ,9,2991
+406,Leon Carrillo, Palestino ,96,87
+407,Emerico Cofre, Huachipato ,66,1555
+408,Manases Maira, Everton ,45,1459
+409,Socorro Lucchini, Colo-Colo ,25,3336
+410,Erick Verdugo, Palestino ,31,3955
+411,Gino Palacios, Colo-Colo ,9,1835
+412,Eros Moroni, Palestino ,2,3439
+413,Marcos2 Hidalgo, Everton ,15,4097
+414,Cipriano Luen, La Serena ,65,4697
+415,Elmer Jofre, La Serena ,29,3422
+416,Sebastian Alarcon, Palestino ,70,4949
+417,Tiburcio Venegas, Universidad de Chile ,4,4174
+418,Fausto2 Venegas, Palestino ,18,4551
+419,Kevin Bahamondes, La Serena ,48,4229
+420,Lorenzo DeLaCruz, Universidad de Chile ,73,1909
+421,Marcelo Gamez, Colo-Colo ,57,4755
+422,Gervasio Alquinta, Universidad de Chile ,77,2143
+423,Ladislao Villagra, Everton ,97,2484
+424,Remigio Barrios, Colo-Colo ,2,578
+425,Lorenzo Lahsen, La Serena ,24,310
+426,Wilfredo Gatica, Palestino ,7,2480
+427,Alejo Messina, Colo-Colo ,21,1199
+428,Fabiola Godoy, Colo-Colo ,34,3479
+429,Salvador Luen, Huachipato ,27,1658
+430,Prudencio Mladinic, Universidad de Chile ,30,567
+431,Salvador Maldonado, Palestino ,92,743
+432,Ezequiel Mujica, La Serena ,97,976
+433,Joaquin2 Suazo, Colo-Colo ,90,586
+434,Oscar DelCanto, Huachipato ,89,738
+435,Ruperto2 Moffat, Palestino ,79,535
+436,Aaron Salazar, Palestino ,27,157
+437,Andres Ortiz, Everton ,97,1471
+438,Norberto Pastene, La Serena ,27,3238
+439,Nabor Suazo, Everton ,83,2201
+440,Esteban Bustos, Everton ,29,4741
+441,Cayetano Fernandez, Huachipato ,93,4280
+442,Leoncio Quiroz, Palestino ,32,4130
+443,Esteban Fuenzalida, Colo-Colo ,46,2749
+444,Teodoro Vidal, Colo-Colo ,70,3698
+445,Waldo Gajardo, Huachipato ,34,3771
+446,Nazario Medel, Palestino ,19,3403
+447,Lorenzo2 Navarrete, La Serena ,15,4159
+448,Alonso Estay, Everton ,45,3384
+449,Hilario Vega, Palestino ,50,961
+450,Tarsicio Valdivia, Everton ,74,454
+451,Lisardo Cartes, Huachipato ,96,1988
+452,Kai Mellado, Everton ,90,2381
+453,Meliton Meza, Universidad de Chile ,22,1922
+454,Renato Mujica, Universidad de Chile ,20,2356
+455,Gustavo Mantegazza, Huachipato ,94,3463
+456,Hernan Krause, La Serena ,20,1953
+457,Felicisimo Huincaman, Palestino ,96,302
+458,Erostrato Huilipan, Everton ,14,3904
+459,Xavier Saavedra, Everton ,49,4558
+460,Nolasco Gallardo, Universidad de Chile ,8,4127
+461,Recaredo Fuentealba, La Serena ,49,1412
+462,Dario Macchiavello, Universidad de Chile ,2,2705
+463,Delfin Gaete, Everton ,60,99
+464,Fausto2 Huerta, Palestino ,83,225
+465,Kevin2 Sanchez, Universidad de Chile ,33,383
+466,Ramon Cisternas, Universidad de Chile ,38,2879
+467,Emanuel Moraga, Palestino ,62,1718
+468,Freddy Lillo, Palestino ,4,2919
+469,Basilio Massone, Huachipato ,77,112
+470,Yosef Nancucheo, La Serena ,92,2479
+471,Genaro Reyes, Everton ,11,3494
+472,Kenny Moroni, Huachipato ,43,2369
+473,Jimena Solis, Colo-Colo ,41,3628
+474,Alberto Mancilla, Palestino ,11,4458
+475,Alarico Vasquez, Palestino ,92,353
+476,Amir Klocker, La Serena ,99,4663
+477,Javier Mogollon, La Serena ,44,1312
+478,Rancel Suarez, Universidad de Chile ,88,992
+479,Ariel Ponce, La Serena ,97,3026
+480,Walter Toro, Palestino ,37,3116
+481,Cayetano2 Chavez, Colo-Colo ,50,2299
+482,Guido2 Ramos, Colo-Colo ,93,3277
+483,Feliciano Villaroel, Everton ,9,2769
+484,Policarpo DelReal, La Serena ,33,3121
+485,Karim Marinovic, Huachipato ,69,1743
+486,Laura Leiva, Everton ,13,4745
+487,Luciano Mantegazza, Palestino ,8,1555
+488,Joel2 Mesina, La Serena ,21,4798
+489,Baltazar Covarrubias, La Serena ,41,3867
+490,Kai Navarro, Colo-Colo ,59,1765
+491,Ramiro Huerta, Universidad de Chile ,79,4088
+492,Renato Monreal, Huachipato ,54,1425
+493,Felix Barriga, Colo-Colo ,46,526
+494,Quentin Alquinta, La Serena ,67,1170
+495,Jaziel Moreno2, Palestino ,5,4871
+496,Dalmacio Mella, La Serena ,47,509
+497,Ceferino Arcos, Huachipato ,84,751
+498,Erasmo Rubio, Huachipato ,68,2244
+499,Efren Iturriaga, Everton ,70,708
+500,Carlos Orellana, La Serena ,75,1174
+501,Florencio Mardones, Everton ,7,3513
+502,Pablo Larraguibel, La Serena ,83,2502
+503,Iker DeLaFuente, Universidad de Chile ,53,1192
+504,Mario3 Vargas, Huachipato ,41,3241
+505,Plutarco Espinosa, Huachipato ,44,3251
+506,Gumersindo Maureira, La Serena ,74,2563
+507,Mario3 Valenzuela, Colo-Colo ,38,3113
+508,Iker Faundez, Huachipato ,49,3849
+509,Policarpo Maldonado, Huachipato ,97,2727
+510,Demian Mardones, Colo-Colo ,85,2817
+511,Ciro2 Medel, Everton ,97,3612
+512,Cayetano2 Moya2, Everton ,61,4240
+513,Manuel Huincaman, Universidad de Chile ,88,3633
+514,Eugenio2 Escudero, Huachipato ,26,2174
+515,Junior Concha, La Serena ,58,2198
+516,Solano Salazar, Huachipato ,27,2346
+517,Ramon Mardones, La Serena ,91,818
+518,Romualdo Castro, Universidad de Chile ,78,4507
+519,Ventura Merino, Colo-Colo ,18,4782
+520,Noriel Cerda, Universidad de Chile ,34,4155
+521,Rogelio Crespo, Universidad de Chile ,82,4093
+522,Petronilo Munita, Huachipato ,29,137
+523,Ariel Leyton, Colo-Colo ,65,3364
+524,Joaquin DeLaCruz, Huachipato ,61,1169
+525,Rosendo Leiva, Palestino ,70,4304
+526,Mateo2 Villalobos, Colo-Colo ,56,1639
+527,Camilo Droguett, La Serena ,47,4573
+528,Cayetano2 Gomez, Everton ,77,4935
+529,Fabricio Salas, Universidad de Chile ,31,1894
+530,Miguel Paredes, Huachipato ,33,1821
+531,Xavier Olguin, Palestino ,21,2224
+532,Leocadio Medel, Palestino ,96,4627
+533,Dimas2 Krause, Huachipato ,99,2435
+534,Elizabeta Rubio, Universidad de Chile ,77,599
+535,Donato Correa, La Serena ,84,4533
+536,Trifon Arriagada, Huachipato ,60,293
+537,Enzo Morgado, Universidad de Chile ,74,1592
+538,Emiliano Illanes, Huachipato ,2,33
+539,Nelson Montes, Everton ,7,1575
+540,Liam Vega, La Serena ,1,2079
+541,Pascasio Ureta, Everton ,25,1461
+542,Jaziel Benavides, Huachipato ,11,1713
+543,Waldo Ferrada, Universidad de Chile ,10,4852
+544,Valentin Rios, La Serena ,39,4036
+545,Valentin2 Marin, Huachipato ,48,4041
+546,Ibrahim Andrade, Everton ,36,1561
+547,Luciano Barahona, La Serena ,60,1310
+548,Tito Tejos, Everton ,20,90
+549,Timoteo Montiel, Universidad de Chile ,60,2544
+550,Calixto Nazer, Universidad de Chile ,61,3028
+551,Isaias Villagra, Huachipato ,78,3136
+552,Ladislao Lorca, Palestino ,97,2804
+553,Aron Lois, Universidad de Chile ,47,4584
+554,Waldo Molina, Huachipato ,63,2018
+555,Samir Belmar, Colo-Colo ,72,851
+556,Ismael2 Larraguibel, Palestino ,24,4006
+557,Tobias Monardes, Palestino ,81,3320
+558,Vidal Lizana, Palestino ,31,1585
+559,Axel Leal, Colo-Colo ,87,4188
+560,Amaro Catalan, Palestino ,59,3902
+561,Servando Maira, Huachipato ,58,4888
+562,Rosendo Escudero, Colo-Colo ,83,1932
+563,Josafat Curilef, La Serena ,37,1036
+564,Modesto Gaete, Everton ,88,204
+565,Elmer DelReal, Palestino ,21,3972
+566,Salomon Ortiz, Palestino ,24,2230
+567,Omar Benitez, Everton ,58,3292
+568,Xavier Mladinic, Universidad de Chile ,67,4738
+569,Esteban Morgado, Colo-Colo ,7,4848
+570,Demian Cantuarias, Everton ,4,4242
+571,Benito Gomez, Huachipato ,69,3034
+572,Juan2 Morande, Palestino ,63,31
+573,Belisario Ortiz, Huachipato ,29,3439
+574,Inigo Barahona, Universidad de Chile ,6,1183
+575,Fabricio go, Palestino ,77,4246
+576,Amancio Larraguibel, Huachipato ,66,814
+577,Bruno DelCanto, Universidad de Chile ,21,3412
+578,Onofre Chacon, Universidad de Chile ,19,2037
+579,Luis Monardes, La Serena ,16,2635
+580,Marcos Escobar, Palestino ,51,1632
+581,Adriel Solis, La Serena ,31,416
+582,Mateo Baeza, La Serena ,21,1742
+583,Arturo Sepulveda, Colo-Colo ,20,4989
+584,Flavio2 Arevalo, Colo-Colo ,16,1005
+585,Silverio Blanco, Huachipato ,17,34
+586,Jacobo Retamal, Colo-Colo ,49,3630
+587,Evaristo2 Melita, Universidad de Chile ,16,4917
+588,Dionel Marfull, Universidad de Chile ,61,859
+589,Aron Yanez, Huachipato ,25,4074
+590,Rigober Lermanda, Huachipato ,30,2990
+591,Petronilo Montt, Palestino ,78,299
+592,Abel Morales2, La Serena ,4,3925
+593,Siro Zamorano, Palestino ,27,2313
+594,Jairo Carrera, Colo-Colo ,79,4274
+595,Desiderio Krumm, Colo-Colo ,42,4597
+596,Genaro2 Uribe, Universidad de Chile ,64,4992
+597,Esteban Opazo, Huachipato ,23,960
+598,Meliton Gandarillas, Huachipato ,52,3423
+599,Faustino Monje, La Serena ,26,4788
+600,Arsenio Olguin, Huachipato ,41,839
+601,Ernesto Leiton, La Serena ,9,2050
+602,Jesus Mujica, Everton ,33,1328
+603,Mauro Benitez, La Serena ,27,571
+604,Gonzalo Miranda, La Serena ,8,2357
+605,Basilio Carvallo, La Serena ,85,2349
+606,Osvaldo Medel, Huachipato ,13,4315
+607,Timoteo Aviles, Colo-Colo ,12,2951
+608,Javier Ovalle, Palestino ,33,3354
+609,Arsenio Moriconi, Universidad de Chile ,5,2917
+610,Hernan2 Fuentealba, La Serena ,14,3788
+611,Fabian Monje, Universidad de Chile ,50,364
+612,Sancho Betancourt, Universidad de Chile ,73,2175
+613,to Saavedra, Everton ,78,4585
+614,Nabor Curinao, Everton ,87,1237
+615,Rodolfo Alquinta, Everton ,66,4040
+616,Camilo Cespedes, La Serena ,66,1005
+617,Jacobo Vega, Palestino ,72,1648
+618,Ovidio Campos, Colo-Colo ,40,2757
+619,Baltazar Santibanez, Everton ,3,3376
+620,Jonathan Perez, Colo-Colo ,74,3115
+621,Laureano Klocker, Colo-Colo ,96,3557
+622,Marcelo2 Valde, Huachipato ,62,2558
+623,Geronimo2 Medina, Colo-Colo ,89,2943
+624,Ibrahim Baeza, Everton ,13,2182
+625,Laureano Zamora, Colo-Colo ,18,2302
+626,Servando Bahamondes, Universidad de Chile ,89,4661
+627,Quirino Macaya, Colo-Colo ,94,3354
+628,Arturo Colque, Universidad de Chile ,56,797
+629,Mario3 Valenzuela, Palestino ,11,1302
+630,Rolando Lagos2, Universidad de Chile ,94,3228
+631,Urbano Alarcon, La Serena ,58,3249
+632,Juan2 Moncada, Everton ,63,4256
+633,Nolasco DelReal, Huachipato ,48,4753
+634,Ulpiano Barahona, Everton ,18,3966
+635,Bonifacio Perez, Colo-Colo ,59,4286
+636,Hilda Torrealba, La Serena ,29,1621
+637,Emerico Moffat, Everton ,61,165
+638,Adrian Venegas, Colo-Colo ,88,3409
+639,Calixto Minoletti, Everton ,8,2637
+640,Timoteo Cantuarias, Everton ,63,3303
+641,Joaquin2 Acosta, Palestino ,95,1713
+642,Desiderio Bascur, Everton ,68,1509
+643,Conrado Mir, Universidad de Chile ,64,2515
+644,Maximiliano Contreras, Colo-Colo ,19,4704
+645,Olegario Cifuentes, Huachipato ,88,4320
+646,Valentin Krause, Universidad de Chile ,28,1426
+647,Nemesio Morande, Palestino ,85,3188
+648,Dario3 Vasquez, Universidad de Chile ,84,2969
+649,Karen Mora, Everton ,51,1261
+650,Froilan Mieres, Universidad de Chile ,0,2108
+651,Tomas DelReal, La Serena ,79,3411
+652,Faustino Lozada, Palestino ,46,989
+653,Elio Robles, Colo-Colo ,79,1839
+654,Zebedeo Monreal, Huachipato ,96,161
+655,Emir Cespedes, La Serena ,37,3829
+656,Cosme Mladinic, Huachipato ,0,4676
+657,Nicolas Mulet, Everton ,47,465
+658,Genaro2 Krebs, Everton ,83,1086
+659,Luciano Brito, La Serena ,50,3714
+660,Eleuterio Aguilera, Everton ,76,2121
+661,Petronilo Robles, Palestino ,10,1879
+662,Rodrigo Alveal, Palestino ,52,4481
+663,Luis2 Gallegos, La Serena ,30,4177
+664,Benicio Gallegos, La Serena ,12,1124
+665,Leandro Guerra, Colo-Colo ,47,2482
+666,Iker2 Correa, Palestino ,64,259
+667,Desiderio2 Huincaman, Huachipato ,33,4826
+668,Candido Hernandez, La Serena ,36,3219
+669,Alex Cifuentes, La Serena ,9,502
+670,Efren Benitez, Universidad de Chile ,48,1254
+671,Quico Herrera, La Serena ,29,2303
+672,Onofre Yanez, Colo-Colo ,29,3167
+673,Patricio Uribe, Huachipato ,46,3896
+674,Bastian Larrondo2, Universidad de Chile ,70,3215
+675,Anastasio Leyton, Everton ,35,4820
+676,Flavio2 Vidal, Palestino ,35,4663
+677,Mateo2 Rifo, Huachipato ,7,2235
+678,Victoriano Medel, La Serena ,61,4805
+679,Julian2 benito, Huachipato ,93,2205
+680,Ernesto Campillay, Colo-Colo ,79,1578
+681,Antonio Riquelme, Palestino ,37,600
+682,Abraham Parra, Huachipato ,75,3665
+683,Mateo Melita, Colo-Colo ,1,3756
+684,Mateo2 Nazer, Huachipato ,95,1736
+685,Inigo Marsan, Huachipato ,6,2598
+686,Isael Marisio, Everton ,88,1501
+687,Marcial Letelier, Universidad de Chile ,25,680
+688,Abel Mardoff, Colo-Colo ,85,1814
+689,Justino Moena, Universidad de Chile ,98,3368
+690,Jordan Aguilar, Huachipato ,3,2951
+691,Nabor Droguett, Huachipato ,79,799
+692,Ildefonso Jeldrez, Everton ,65,2123
+693,Sergio Krause, Palestino ,92,2779
+694,Camilo Melivilu, La Serena ,9,4948
+695,Nicomedes Mackenna, Everton ,46,1735
+696,Marcelo Claveria, La Serena ,80,2167
+697,Geronimo Lucchini, Palestino ,1,3844
+698,Ambrosio Ceballos, Palestino ,84,1477
+699,Marcelo2 Figueroa, Colo-Colo ,21,4054
+700,Daniel Castillo, La Serena ,27,1478

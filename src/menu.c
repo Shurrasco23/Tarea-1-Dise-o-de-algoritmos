@@ -22,6 +22,7 @@ void Menu(){
         printf("|                                                              |\n");
         printf(" --------------------------------------------------------------\n");
 
+        // Restringir la entrada de caracteres no validos (negativos y/o letras)
         while (scanf("%d", &eleccion)!=1){
             printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
             while(getchar() != '\n'); // Limpiar el buffer de entrada
@@ -32,17 +33,25 @@ void Menu(){
             case 1:
                 
                 printf("Ingrese la cantidad de deportistas a generar: ");
-                scanf("%d", &itemsPorCrear);
+                while(scanf("%d", &itemsPorCrear)!=1 || itemsPorCrear <= 0){
+                    printf ("No ingresar letras o numeros negativos: ");
+                    while (getchar()!='\n');
+                }
                 printf("\033[0;33mGenerando CSV con %d deportistas...\033[0m\n", itemsPorCrear);
                 
                 CreaCsv(itemsPorCrear);
                 break;
 
             case 2:
-                ListarCsvDisponibles();
+                
+                int sepuedeListar = ListarCsvDisponibles(itemsPorCrear);
+                
+                if (sepuedeListar == -1 || sepuedeListar == 1){
+                    break;
+                } // No hay csv disponibles o no se pudo abrir opciones.csv
 
                 while (csvElegido != -1){
-
+                    
                     printf("Ingrese el tamaño de CSV que desea utilizar (-1 para salir): ");
                     scanf(" %d", &csvElegido);
                     snprintf(path, sizeof(path), "db/deportistas%d.csv", csvElegido);
@@ -50,7 +59,14 @@ void Menu(){
                     if (access(path, F_OK) == 0) {
                         LeerCsvDeportistas(path); 
                         break;  
-                    } else {
+                    }
+                    
+                    else if (csvElegido == -1){
+                        printf ("Saliendo de carga CSV...\n");
+                        break;
+                    }
+                    
+                    else {
                         printf("%d no es un tamaño válido\n", csvElegido);
                     }
                 }

@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 #include <unistd.h>
 
 #define MAX_NOMBRE 64
@@ -30,13 +31,18 @@ void LeerNombresApellidos();
 void CreaCsv(int itemsPorCrear);
 void LeerCsvDeportistas(const char* filename);
 int ExtraerCantidadDeFilename(const char* filename);
-void ListarCsvDisponibles();
+int ListarCsvDisponibles(int itemsPorCrear);
+
 // Menu 
 void Menu();
 void OrdenaCsv();
 void BuscarPorID();
 void Ranking();
 void showFirst10Deportistas();
+// Validaciones 
+bool sePuedeOrdenar();
+bool existenCSV(const char *filename, int itemsPorCrear);
+
 // Algoritmos de ordenamiento}
 // Callbacks para ordenamiento
 int CmpPorID(const Deportista* a, const Deportista* b);
@@ -44,6 +50,7 @@ int CmpPorNombre(const Deportista* a, const Deportista* b);
 int CmpPorEquipo(const Deportista* a, const Deportista* b);
 int CmpPorPuntaje(const Deportista* a, const Deportista* b);
 int CmpPorCompetencias(const Deportista* a, const Deportista* b);
+
 // Bubble Sort con callback
 void bubbleSort(Deportista* arr, int size, Comparador cmp);
 void insertionSort(Deportista* arr, int size, Comparador cmp);

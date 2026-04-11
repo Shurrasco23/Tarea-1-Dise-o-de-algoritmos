@@ -1,7 +1,5 @@
 #include "../includes/commons.h" 
 
-
-
 void bubbleSort(Deportista* arr, int size, Comparador cmp) {
     int swapped = 0;
     for (int i = 0; i < size-1; i++){
@@ -30,3 +28,6 @@ void insertionSort(Deportista* arr, int size, Comparador cmp) {
         arr[j + 1] = key;
     }
 }
+
+
+

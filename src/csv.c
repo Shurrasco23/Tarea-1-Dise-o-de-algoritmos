@@ -49,7 +49,7 @@ void LeerNombresApellidos(){
 
     fclose(archivoNombres);
     fclose(archivoApellidos);
-} // N^2 * N^2 = N^4
+} 
 
 void CreaCsv(int itemsPorCrear){
 
@@ -95,18 +95,30 @@ void CreaCsv(int itemsPorCrear){
     } else {
         printf("Advertencia: No se pudo actualizar db/tools/opciones.csv\n");
     }
+
 }
 
-void ListarCsvDisponibles(){
+int ListarCsvDisponibles(int itemsPorCrear){
     
     int cont = 1;
     char path[1024];
     char line[128];
+      
     FILE *opciones = fopen("db/tools/opciones.csv", "r");
     if (opciones == NULL) {
-        printf("Error al abrir db/tools/opciones.csv\n");
-        return;
+        printf("\033[0;31mNo se encontraron CSV disponibles en db/. CREE un csv para continuar.\033[0m\n");
+        return -1;
     }
+
+    char firstLine[128];
+    if (fgets(firstLine, sizeof(firstLine), opciones) == NULL) {
+        printf("\033[0;31mNo se encontraron CSV disponibles en db/. CREE un csv para continuar.\033[0m\n");
+        fclose(opciones);
+        return -1;
+    }
+
+    // Reabrir para leer desde el principio
+    rewind(opciones);
 
     // Queremos almacenar solo las opciones que realmente existen, para eso creamos un archivo temporal
     // Luego cargamos al nuevo opciones.csv solo con las opciones válidas, eliminando las que no existen
@@ -133,7 +145,7 @@ void ListarCsvDisponibles(){
 
     remove ("db/tools/opciones.csv"); // Eliminar archivo original
     rename ("db/tools/opciones_temp.csv", "db/tools/opciones.csv"); // Renombrar archivo temporal
-
+    return 0;
 }
 // Carga un CSV de
 void LeerCsvDeportistas(const char* filename){
@@ -190,6 +202,7 @@ void LeerCsvDeportistas(const char* filename){
 
     fclose(archivo);
     printf("\033[0;32mDeportistas cargados: %d\033[0m\n", currItem);
+
 }
 
 // Función para extraer la cantidad de items del nombre del archivo.
@@ -202,8 +215,71 @@ int ExtraerCantidadDeFilename(const char* filename) {
     return -1;  // Error: no se pudo extraer la cantidad
 }
 
+// Funcion para obligar al usuario a cargar un CSV, si no hay deportistas cargados no se puede ordenar ningun campo
+bool sePuedeOrdenar(){
+    if (deportistas == NULL) {
+        printf("\033[0;31mNo hay deportistas cargados para ordenar, CARGUE un deportistas<cantidad>.csv\033[0m\n");
+        return false;
+    }
+    return true;
+}
+
 void OrdenaCsv(){
     
+    int seleccion = 0;
+
+    if (!sePuedeOrdenar()) return; // No hay deportistas cargados
+ 
+    do {
+        printf ("\033[0;33mSub-menu de ordenamineto: \033[0m");
+        printf("\n");
+        printf(" --------------------------------------------------------------\n");
+        printf("|Seleccione alguno de estos ordenamientos:                     |\n");
+        printf("|                                                              |\n");
+        printf("|1: Ordenamiento por ID                                        |\n");
+        printf("|2: Ordenamiento por nombre                                    |\n");
+        printf("|3: Ordenar por puntaje                                        |\n");
+        printf("|4: Ordenar por cantidad de competencias                       |\n");
+        printf("|5: Salir                                                      |\n");
+        printf("|                                                              |\n");
+        printf(" --------------------------------------------------------------\n");
+    
+        while (scanf("%d", &seleccion)!=1){
+            printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
+            while(getchar() != '\n'); // Limpiar el buffer de entrada
+        }
+
+        switch (seleccion){
+
+            case 1:
+                bubbleSort(deportistas, cantItems, CmpPorID); // algoritmo de prueba para ordenamiento ID
+                printf("\033[0;32mDeportistas ordenados por ID.\033[0m\n");
+                showFirst10Deportistas();
+                break;
+            /* ordennamientos por otros campos aun no disponibles, buscando algoritmos
+            case 2:
+               
+                showFirst10Deportistas();
+                break;
+
+            case 3:
+                
+                showFirst10Deportistas();
+                break;
+
+            case 4:
+                
+                break;
+
+            case 5:
+                printf("Saliendo del submenú de ordenamiento...\n");
+                break;
+            */
+            default:
+                printf("Opcion invalida, seleccione nuevamente\n");
+        }
+
+    } while (seleccion >= 1 && seleccion < 5); 
 }
 
 void BuscarPorID(){
@@ -213,3 +289,4 @@ void BuscarPorID(){
 void Ranking(){
 
 }
+

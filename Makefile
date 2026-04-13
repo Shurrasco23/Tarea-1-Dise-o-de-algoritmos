@@ -16,4 +16,8 @@ $(BUILD_DIR)/%.o: %.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+clean:
+	rm -rf $(BUILD_DIR) $(EXECUTABLE)
+	
 .PHONY: run
+

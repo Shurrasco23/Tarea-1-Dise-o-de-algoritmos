@@ -216,9 +216,9 @@ int ExtraerCantidadDeFilename(const char* filename) {
 }
 
 // Funcion para obligar al usuario a cargar un CSV, si no hay deportistas cargados no se puede ordenar ningun campo
-bool sePuedeOrdenar(){
+bool sePuedeIterar(){
     if (deportistas == NULL) {
-        printf("\033[0;31mNo hay deportistas cargados para ordenar, CARGUE un deportistas<cantidad>.csv\033[0m\n");
+        printf("\033[0;31mNo hay deportistas cargados para hacer iteraciones, CARGUE un deportistas<cantidad>.csv\033[0m\n");
         return false;
     }
     return true;
@@ -228,7 +228,7 @@ void OrdenaCsv(){
     
     int seleccion = 0;
 
-    if (!sePuedeOrdenar()) return; // No hay deportistas cargados
+    if (!sePuedeIterar()) return; // No hay deportistas cargados
  
     do {
         printf ("\033[0;33mSub-menu de ordenamineto: \033[0m");
@@ -256,25 +256,31 @@ void OrdenaCsv(){
                 printf("\033[0;32mDeportistas ordenados por ID.\033[0m\n");
                 showFirst10Deportistas();
                 break;
-            /* ordennamientos por otros campos aun no disponibles, buscando algoritmos
+           
             case 2:
-               
+                insertionSort(deportistas, cantItems, CmpPorNombre); // algoritmo de prueba para ordenamiento por nombre
+                printf ("\033[0;32mDeportistas ordenados por el nombre.\033[0m\n");               
                 showFirst10Deportistas();
                 break;
 
             case 3:
-                
+                selectionSort(deportistas, cantItems, CmpPorPuntaje); // algoritmo de prueba para ordenamiento por puntaje
+                printf("\033[0;32mDeportistas ordenados por puntaje.\033[0m\n");
                 showFirst10Deportistas();
                 break;
 
             case 4:
-                
+                selectionSort(deportistas, cantItems, CmpPorCompetencias); // algoritmo de prueba para ordenamiento por cantidad de competencias
+                printf("\033[0;32mDeportistas ordenados por cantidad de competencias.\033[0m\n");
+                showFirst10Deportistas();
                 break;
 
             case 5:
+                printf ("Ordenando por ID antes de salir...\n"); // Evitar problemas con la busqueda por ID
+                bubbleSort(deportistas, cantItems, CmpPorID); // Ordenamos por ID antes de salir para mantener ordenados los CSV
                 printf("Saliendo del submenú de ordenamiento...\n");
                 break;
-            */
+        
             default:
                 printf("Opcion invalida, seleccione nuevamente\n");
         }
@@ -284,6 +290,44 @@ void OrdenaCsv(){
 
 void BuscarPorID(){
 
+    if (!sePuedeIterar()) return; // Validar que hay deportistas cargados
+    
+    printf ("\033[0;33mBusqueda por ID: \033[0m\n");
+    printf ("Ingresar -2 para salir de la busqueda por ID\n");
+
+    int targetID;
+
+    do {
+        printf ("Ingrese el ID del deportista que desea buscar: ");
+        while (scanf("%d", &targetID)!=1){
+            printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
+            if (targetID == -2){
+                printf ("Saliendo de busqueda por ID");
+                break;
+            }
+            while (getchar() != '\n'); // Limpiar el buffer de entrada
+        }
+
+        int index = binarySearchID(deportistas, cantItems, targetID);
+
+        if (index != -1) {
+            printf ("\033[0;32mDeportista encontrado: [%d]\033[0m \n", targetID);
+            printf("%-5s %-25s %-15s %-10s %s\n", "ID", "Nombre", "Equipo", "Puntaje", "Competencias");
+            printf ("-------------------------------------------------------------\n");
+            printf("%-5d %-20s %-15s %-10.2f %d\n", 
+                deportistas[index].ID, 
+                deportistas[index].nombre, 
+                deportistas[index].equipo, 
+                deportistas[index].puntaje, 
+                deportistas[index].cantidadCompetencias
+            );
+            printf ("-------------------------------------------------------------\n");
+        }
+
+        else {
+            printf ("\033[0;31mDeportista no encontrado: [%d]\033[0m\n", targetID);
+        }
+    } while (targetID != -2);
 }
 
 void Ranking(){

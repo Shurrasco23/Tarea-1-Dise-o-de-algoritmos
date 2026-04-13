@@ -12,6 +12,7 @@
 #define MAX_NOMBRE 64
 #define MAX_EQUIPO 64
 
+// Estructura para representar a un deportista
 typedef struct{
     int ID;
     char nombre[MAX_NOMBRE];
@@ -19,6 +20,13 @@ typedef struct{
     double puntaje;
     int cantidadCompetencias;
 } Deportista;
+
+// Estructura para medir tiempos de ejecución
+typedef struct {
+    clock_t start;
+    clock_t end;
+    double cpu_time_used;
+} ExecTime;
 
 extern Deportista* deportistas; // Declaración del arreglo global de deportistas
 extern int cantItems; // Declaración del contador global de deportistas
@@ -40,10 +48,9 @@ void BuscarPorID();
 void Ranking();
 void showFirst10Deportistas();
 // Validaciones 
-bool sePuedeOrdenar();
-bool existenCSV(const char *filename, int itemsPorCrear);
+bool sePuedeIterar();
 
-// Algoritmos de ordenamiento}
+// Algoritmos de ordenamiento
 // Callbacks para ordenamiento
 int CmpPorID(const Deportista* a, const Deportista* b);
 int CmpPorNombre(const Deportista* a, const Deportista* b);
@@ -54,5 +61,9 @@ int CmpPorCompetencias(const Deportista* a, const Deportista* b);
 // Bubble Sort con callback
 void bubbleSort(Deportista* arr, int size, Comparador cmp);
 void insertionSort(Deportista* arr, int size, Comparador cmp);
+void selectionSort(Deportista* arr, int size, Comparador cmp);
+void cocktailSort(Deportista* arr, int size, Comparador cmp);
 
+// Algoritmos de búsqueda
+int binarySearchID(Deportista *arr, int size, int targetID); // Busqueda binaria para el ID
 #endif

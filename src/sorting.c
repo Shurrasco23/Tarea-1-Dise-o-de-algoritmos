@@ -37,9 +37,13 @@ void selectionSort(Deportista* arr, int size, Comparador cmp) {
                 min_idx = j;
             }
         }
-        Deportista temp = arr[min_idx];
-        arr[min_idx] = arr[i];
-        arr[i] = temp;
+
+        // optimización
+        if (min_idx != i) {
+            Deportista temp = arr[min_idx];
+            arr[min_idx] = arr[i];
+            arr[i] = temp;
+        }
     }
 }
 

@@ -79,7 +79,7 @@ void Menu(){
                 break;
                 
             case 4:
-                BuscarPorID();
+                BuscarPorIDBinario();
                 break;
 
             case 5:

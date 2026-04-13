@@ -288,7 +288,7 @@ void OrdenaCsv(){
     } while (seleccion >= 1 && seleccion < 5); 
 }
 
-void BuscarPorID(){
+void BuscarPorIDBinario(){
 
     if (!sePuedeIterar()) return; // Validar que hay deportistas cargados
     
@@ -308,7 +308,7 @@ void BuscarPorID(){
             while (getchar() != '\n'); // Limpiar el buffer de entrada
         }
 
-        int index = binarySearchID(deportistas, cantItems, targetID);
+        int index = busquedaBinaria(deportistas, cantItems, targetID);
 
         if (index != -1) {
             printf ("\033[0;32mDeportista encontrado: [%d]\033[0m \n", targetID);

@@ -44,7 +44,7 @@ int ListarCsvDisponibles(int itemsPorCrear);
 // Menu 
 void Menu();
 void OrdenaCsv();
-void BuscarPorID();
+void BuscarPorIDBinario();
 void Ranking();
 void showFirst10Deportistas();
 // Validaciones 
@@ -65,5 +65,6 @@ void selectionSort(Deportista* arr, int size, Comparador cmp);
 void cocktailSort(Deportista* arr, int size, Comparador cmp);
 
 // Algoritmos de búsqueda
-int binarySearchID(Deportista *arr, int size, int targetID); // Busqueda binaria para el ID
+int busquedaBinaria(Deportista *arr, int size, int targetID); // Busqueda binaria para el ID
+int busquedaSecuencial(Deportista *arr, int size, int targetID);
 #endif

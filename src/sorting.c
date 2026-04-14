@@ -1,6 +1,9 @@
 #include "../includes/commons.h" 
 
 void bubbleSort(Deportista* arr, int size, Comparador cmp) {
+    clock_t start_t, end_t;
+
+    start_t = clock();
     int swapped = 0;
     for (int i = 0; i < size-1; i++){
         swapped = 0;
@@ -15,9 +18,14 @@ void bubbleSort(Deportista* arr, int size, Comparador cmp) {
         }
         if (swapped == 0) break; // No se hicieron intercambios, el arreglo ya está ordenado
     }
+    end_t = clock();
+    double tiempo_usado = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    printf("\033[0;34m[Bubble]Tiempo de ejecución: %.6f segundos\033[0m\n", tiempo_usado);
 }
 
 void insertionSort(Deportista* arr, int size, Comparador cmp) {
+    clock_t start_t, end_t;
+    start_t = clock();
     for (int i = 1; i < size; i++) {
         Deportista key = arr[i]; // Elemento a insertar
         int j = i - 1;
@@ -27,9 +35,14 @@ void insertionSort(Deportista* arr, int size, Comparador cmp) {
         }
         arr[j + 1] = key;
     }
+    end_t = clock();
+    double tiempo_usado = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    printf("\033[0;34m[Insertion]Tiempo de ejecución: %.6f segundos\033[0m\n", tiempo_usado);
 }
 
 void selectionSort(Deportista* arr, int size, Comparador cmp) {
+    clock_t start_t, end_t;
+    start_t = clock();
     for (int i = 0; i < size-1; i++) {
         int min_idx = i;
         for (int j = i+1; j < size; j++) {
@@ -45,9 +58,15 @@ void selectionSort(Deportista* arr, int size, Comparador cmp) {
             arr[i] = temp;
         }
     }
+    end_t = clock();
+    double tiempo_usado = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    printf("\033[0;34m[Selection]Tiempo de ejecución: %.6f segundos\033[0m\n", tiempo_usado);
 }
 
 void cocktailSort(Deportista* arr, int size, Comparador cmp) {
+    clock_t start_t, end_t;
+    start_t = clock();
+    
     int swapped = 1;
     int start = 0;
     int end = size - 1;
@@ -78,6 +97,25 @@ void cocktailSort(Deportista* arr, int size, Comparador cmp) {
             }
         }
         start++;
+    }
+
+    end_t = clock();
+    double tiempo_usado = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    printf("\033[0;34m[Cocktail]Tiempo de ejecución: %.6f segundos\033[0m\n", tiempo_usado);
+}
+
+void fisherYatesShuffle(Deportista* arr, int size) {
+    
+    srand(time(0));
+    Deportista temp;
+
+    for (int i = size - 1; i > 0; i--) {
+        int j = rand() % (i + 1); // Índice aleatorio entre 0 e i
+        
+        // Swap
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
 

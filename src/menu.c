@@ -97,3 +97,85 @@ void Menu(){
     } while (eleccion != 6);
 
 }
+
+void OrdenaCsv(){
+    
+    int seleccionCriterio = 0;
+    int seleccionAlgoritmo = 0;
+    Comparador cmp = NULL;
+
+    if (!sePuedeIterar()) return; // No hay deportistas cargados
+ 
+    while (1) { 
+        printf ("\033[0;33mSub-menu de ordenamiento: \033[0m\n");
+        printf(" --------------------------------------------------------------\n");
+        printf("|Seleccione el campo por el cual desea ordenar:                |\n");
+        printf("|1: Ordenamiento por ID                                        |\n");
+        printf("|2: Ordenamiento por nombre                                    |\n");
+        printf("|3: Ordenar por puntaje                                        |\n");
+        printf("|4: Ordenar por cantidad de competencias                       |\n");
+        printf("|5: Salir al Menu Principal                                    |\n");
+        printf(" --------------------------------------------------------------\n");
+    
+        while (scanf("%d", &seleccionCriterio)!=1){
+            printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
+            while(getchar() != '\n'); 
+        }
+
+        // Si elige 5 aquí, ordenamos por ID y salimos completamente de la función
+        if (seleccionCriterio == 5) {
+            printf ("Ordenando por ID antes de salir...\n"); 
+            bubbleSort(deportistas, cantItems, CmpPorID); 
+            printf("Saliendo del submenú de ordenamiento...\n");
+            return; // Volver al menú principal
+        }
+
+        switch (seleccionCriterio){
+            case 1: cmp = CmpPorID; break;
+            case 2: cmp = CmpPorNombre; break;
+            case 3: cmp = CmpPorPuntaje; break;
+            case 4: cmp = CmpPorCompetencias; break;
+            default:
+                printf("Opcion invalida, seleccione nuevamente\n");
+                continue;
+        }
+
+        while (1) { 
+            printf ("\033[0;33mSelección de algoritmo: \033[0m\n");
+            printf(" --------------------------------------------------------------\n");
+            printf("|Seleccione algoritmo de ordenamiento que desea utilizar:      |\n");
+            printf("|1: BubbleSort                                                 |\n");
+            printf("|2: InsertionSort                                              |\n");
+            printf("|3: SelectionSort                                              |\n");
+            printf("|4: CocktailSort                                               |\n");
+            printf("|5: Volver a elegir criterio                                   |\n");
+            printf(" --------------------------------------------------------------\n"); 
+            
+            while (scanf("%d", &seleccionAlgoritmo)!=1){
+                printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
+                while(getchar() != '\n'); 
+            }
+            
+            // Si elige 5 aquí, rompemos el loop interno para volver al externo
+            if (seleccionAlgoritmo == 5) {
+                printf("Volviendo al menú de criterios...\n");
+                break;
+            }
+
+            switch (seleccionAlgoritmo) {
+                case 1: bubbleSort(deportistas, cantItems, cmp); break;
+                case 2: insertionSort(deportistas, cantItems, cmp); break;
+                case 3: selectionSort(deportistas, cantItems, cmp); break;
+                case 4: cocktailSort(deportistas, cantItems, cmp); break;
+                default:
+                    printf("Opcion invalida, seleccione nuevamente\n");
+                    continue;
+            }
+
+            
+            showFirst10Deportistas(); 
+            printf("\033[0;32mOrdenamiento completado exitosamente.\033[0m\n");
+            return; // Volver al menú principal
+        }
+    } 
+}

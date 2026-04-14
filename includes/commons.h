@@ -58,11 +58,14 @@ int CmpPorEquipo(const Deportista* a, const Deportista* b);
 int CmpPorPuntaje(const Deportista* a, const Deportista* b);
 int CmpPorCompetencias(const Deportista* a, const Deportista* b);
 
-// Bubble Sort con callback
+// Algoritmos de ordenamiento
 void bubbleSort(Deportista* arr, int size, Comparador cmp);
 void insertionSort(Deportista* arr, int size, Comparador cmp);
 void selectionSort(Deportista* arr, int size, Comparador cmp);
 void cocktailSort(Deportista* arr, int size, Comparador cmp);
+
+// Algoritmo de shuffle para crear CSV desordenados
+void fisherYatesShuffle(Deportista* arr, int size);
 
 // Algoritmos de búsqueda
 int busquedaBinaria(Deportista *arr, int size, int targetID); // Busqueda binaria para el ID

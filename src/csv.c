@@ -15,6 +15,9 @@ int totalEquipos = 6;
 
 void LeerNombresApellidos(){
 
+    totalNombres = 0;
+    totalApellidos = 0;
+
     FILE *archivoNombres = fopen("db/tools/nombres.csv", "r"); // leer archivo Nombres.csv
     FILE *archivoApellidos = fopen("db/tools/apellidos.csv", "r"); // leer archivo Apellidos.csv
 
@@ -53,12 +56,18 @@ void LeerNombresApellidos(){
 
 void CreaCsv(int itemsPorCrear){
 
-    int puntaje=0, cantidadCompetencias=0;
+    int competenciasRandom = 0, nombreRandom = 0, apellidoRandom = 0, equipoRandom = 0;
+    double puntajeRandom = 0;
+    char nombreCompleto[100];
     char pathCsv[1024];
+    Deportista nuevoCsv[itemsPorCrear];
 
     // Crear path correcto
     srand(time(0));
     snprintf(pathCsv, sizeof(pathCsv), "db/deportistas%d.csv", itemsPorCrear);
+
+    // Comprobamos si el archivo existe antes de crearlo para evitar agregar opciones duplicadas en opciones.csv
+    bool archivoYaExiste = access(pathCsv, F_OK) == 0;
 
     FILE *archivo = fopen(pathCsv, "w");
     if (archivo == NULL) {
@@ -72,21 +81,47 @@ void CreaCsv(int itemsPorCrear){
         return;
     }
 
-    fprintf(archivo,"ID,Nombre,Equipo,Puntaje,cantidadCompetencias\n");
-    for (int i = 1; i <= itemsPorCrear; i++){
-        int randomNombre = rand() % totalNombres;
-        int randomApellido = rand() % totalApellidos;
-        puntaje = rand() % 100;
-        cantidadCompetencias = rand() % 5000;
-        fprintf(
-            archivo, "%d,%s %s, %s ,%d,%d\n", 
-            i, nombres[randomNombre], apellidos[randomApellido], equipos[rand()%totalEquipos],puntaje, cantidadCompetencias
-        );
+    
+    for (int i = 0; i < itemsPorCrear; i++){
+        nombreRandom = rand() % totalNombres;
+        apellidoRandom = rand() % totalApellidos;
+        equipoRandom = rand() % totalEquipos;
+        puntajeRandom = ((double)rand() / RAND_MAX) * 100.0;
+        competenciasRandom = rand() % 5000;
+        snprintf(nombreCompleto, sizeof(nombreCompleto), "%s %s", nombres[nombreRandom], apellidos[apellidoRandom]);
+        
+        nuevoCsv[i].ID = i + 1;
+        strcpy(nuevoCsv[i].nombre, nombreCompleto);
+        strcpy(nuevoCsv[i].equipo, equipos[equipoRandom]);
+        nuevoCsv[i].puntaje = puntajeRandom;
+        nuevoCsv[i].cantidadCompetencias = competenciasRandom;
+
     }
 
+    fisherYatesShuffle(nuevoCsv, itemsPorCrear); // Mezclar el nuevo CSV para evitar que vengan ordenados por ID
+
+    // Escribir nuevo CSV
+    fprintf(archivo,"ID,Nombre,Equipo,Puntaje,cantidadCompetencias\n");
+    for (int i = 0; i < itemsPorCrear; i++){
+        fprintf(
+            archivo, "%d,%s, %s, %.2f, %d\n", 
+            nuevoCsv[i].ID,
+            nuevoCsv[i].nombre,
+            nuevoCsv[i].equipo,
+            nuevoCsv[i].puntaje,
+            nuevoCsv[i].cantidadCompetencias
+        );
+    }
     fclose(archivo);
     printf("\033[0;32mCSV de deportistas creado con %d registros.\033[0m\n", itemsPorCrear);
     
+   
+
+    if (archivoYaExiste) {
+        printf("Archivo ya listado en opciones.csv, no se agregará nuevamente.\n");
+        return;
+    }
+
     // Actualizar db/tools/opciones.csv
     FILE *opciones = fopen("db/tools/opciones.csv", "a");
     if (opciones != NULL) {
@@ -135,6 +170,7 @@ int ListarCsvDisponibles(int itemsPorCrear){
         if (access(path, F_OK) == 0) {
             printf("%d.  %s\n", cont, line);
             fprintf(temp, "%s\n", line); // Guardar solo los que existen
+            cont++;
         } else {
             printf("Opción %s no encontrada, se ha eliminado.\n", line);
         }
@@ -222,70 +258,6 @@ bool sePuedeIterar(){
         return false;
     }
     return true;
-}
-
-void OrdenaCsv(){
-    
-    int seleccion = 0;
-
-    if (!sePuedeIterar()) return; // No hay deportistas cargados
- 
-    do {
-        printf ("\033[0;33mSub-menu de ordenamineto: \033[0m");
-        printf("\n");
-        printf(" --------------------------------------------------------------\n");
-        printf("|Seleccione alguno de estos ordenamientos:                     |\n");
-        printf("|                                                              |\n");
-        printf("|1: Ordenamiento por ID                                        |\n");
-        printf("|2: Ordenamiento por nombre                                    |\n");
-        printf("|3: Ordenar por puntaje                                        |\n");
-        printf("|4: Ordenar por cantidad de competencias                       |\n");
-        printf("|5: Salir                                                      |\n");
-        printf("|                                                              |\n");
-        printf(" --------------------------------------------------------------\n");
-    
-        while (scanf("%d", &seleccion)!=1){
-            printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
-            while(getchar() != '\n'); // Limpiar el buffer de entrada
-        }
-
-        switch (seleccion){
-
-            case 1:
-                bubbleSort(deportistas, cantItems, CmpPorID); // algoritmo de prueba para ordenamiento ID
-                printf("\033[0;32mDeportistas ordenados por ID.\033[0m\n");
-                showFirst10Deportistas();
-                break;
-           
-            case 2:
-                insertionSort(deportistas, cantItems, CmpPorNombre); // algoritmo de prueba para ordenamiento por nombre
-                printf ("\033[0;32mDeportistas ordenados por el nombre.\033[0m\n");               
-                showFirst10Deportistas();
-                break;
-
-            case 3:
-                selectionSort(deportistas, cantItems, CmpPorPuntaje); // algoritmo de prueba para ordenamiento por puntaje
-                printf("\033[0;32mDeportistas ordenados por puntaje.\033[0m\n");
-                showFirst10Deportistas();
-                break;
-
-            case 4:
-                selectionSort(deportistas, cantItems, CmpPorCompetencias); // algoritmo de prueba para ordenamiento por cantidad de competencias
-                printf("\033[0;32mDeportistas ordenados por cantidad de competencias.\033[0m\n");
-                showFirst10Deportistas();
-                break;
-
-            case 5:
-                printf ("Ordenando por ID antes de salir...\n"); // Evitar problemas con la busqueda por ID
-                bubbleSort(deportistas, cantItems, CmpPorID); // Ordenamos por ID antes de salir para mantener ordenados los CSV
-                printf("Saliendo del submenú de ordenamiento...\n");
-                break;
-        
-            default:
-                printf("Opcion invalida, seleccione nuevamente\n");
-        }
-
-    } while (seleccion >= 1 && seleccion < 5); 
 }
 
 void BuscarPorIDBinario(){

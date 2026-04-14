@@ -34,6 +34,12 @@ extern int cantItems; // Declaración del contador global de deportistas
 // Callback para manejar el ordenamiento por diferentes campos
 typedef int (*Comparador)(const Deportista* a, const Deportista* b);
 
+// Callback para experimentar con distintos algoritmos de ordenamiento
+typedef void (*AlgoritmoOrdenamiento)(Deportista* arr, int size, Comparador cmp);
+
+// Callbacks para experimentar con distintos algoritmos de búsqueda
+typedef int (*AlgoritmoBusqueda)(Deportista *arr, int size, int targetID);
+
 // CSV
 void LeerNombresApellidos();
 void CreaCsv(int itemsPorCrear);
@@ -43,12 +49,12 @@ int ListarCsvDisponibles(int itemsPorCrear);
 
 // Menu 
 void Menu();
-void OrdenaCsv();
+void OpcionOrdenarCsv();
 void BuscarPorIDBinario();
-void Ranking();
+void Ranking(int numRankingMostrar);
 void showFirst10Deportistas();
 // Validaciones 
-bool sePuedeIterar();
+bool HayDeportistasCargados();
 
 // Algoritmos de ordenamiento
 // Callbacks para ordenamiento
@@ -59,15 +65,20 @@ int CmpPorPuntaje(const Deportista* a, const Deportista* b);
 int CmpPorCompetencias(const Deportista* a, const Deportista* b);
 
 // Algoritmos de ordenamiento
-void bubbleSort(Deportista* arr, int size, Comparador cmp);
-void insertionSort(Deportista* arr, int size, Comparador cmp);
-void selectionSort(Deportista* arr, int size, Comparador cmp);
-void cocktailSort(Deportista* arr, int size, Comparador cmp);
+void BubbleSort(Deportista* arr, int size, Comparador cmp);
+void InsertionSort(Deportista* arr, int size, Comparador cmp);
+void SelectionSort(Deportista* arr, int size, Comparador cmp);
+void CocktailSort(Deportista* arr, int size, Comparador cmp);
+void InvertirArreglo(Deportista* arr, int size, Comparador cmp);
 
 // Algoritmo de shuffle para crear CSV desordenados
-void fisherYatesShuffle(Deportista* arr, int size);
+void FisherYatesShuffle(Deportista* arr, int size);
 
 // Algoritmos de búsqueda
-int busquedaBinaria(Deportista *arr, int size, int targetID); // Busqueda binaria para el ID
-int busquedaSecuencial(Deportista *arr, int size, int targetID);
+int BusquedaBinaria(Deportista *arr, int size, int targetID); // Busqueda binaria para el ID
+int BusquedaSecuencial(Deportista *arr, int size, int targetID);
+
+// Experimentos
+void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp);
+void ExperimentoBusqueda(AlgoritmoBusqueda algoritmo, int targetID);
 #endif

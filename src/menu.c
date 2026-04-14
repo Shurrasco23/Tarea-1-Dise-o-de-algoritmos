@@ -4,6 +4,7 @@ void Menu(){
 
     int eleccion = 0;
     int itemsPorCrear = 0;
+    int numRankingMostrar = 0;
     int csvElegido = 0;
     char path[1024];
 
@@ -18,7 +19,9 @@ void Menu(){
         printf("|3: Ordenar Csv por campo                                      |\n");
         printf("|4: Buscar deportista por ID                                   |\n");
         printf("|5: Mostrar ranking de los n mejores deportistas (n a elegir)  |\n");
-        printf("|6: Salir                                                      |\n");
+        printf("|6: Experimento complejidad temporal algoritmos de ordenamiento|\n");
+        printf("|7: Experimento complejidad temporal algoritmos de búsqueda    |\n");
+        printf("|8: Salir                                                      |\n");
         printf("|                                                              |\n");
         printf(" --------------------------------------------------------------\n");
 
@@ -75,7 +78,7 @@ void Menu(){
                 break;
 
             case 3:
-                OrdenaCsv(); // Submenu de ordenamiento
+                OpcionOrdenarCsv(); // Submenu de ordenamiento
                 break;
                 
             case 4:
@@ -83,10 +86,35 @@ void Menu(){
                 break;
 
             case 5:
-                Ranking();
+                printf("Ingrese la cantidad de deportistas a mostrar en el ranking: ");
+                while(scanf("%d", &numRankingMostrar)!=1 || numRankingMostrar <= 0 || numRankingMostrar > cantItems){
+                    printf ("Ingrese un número válido, menor a %d: ", cantItems);
+                    while (getchar()!='\n');
+                }
+                Ranking(numRankingMostrar);
+                break;
+            
+            case 6:
+                if (!HayDeportistasCargados()) break; // Validar que hay deportistas cargados para experimentar
+            
+                printf("\033[0;33mExperimento complejidad temporal algoritmos de ordenamiento\033[0m\n");
+                
+                printf("Bubble Sort\n");
+                ExperimentoOrdenamiento(BubbleSort, CmpPorNombre); // Ordenamos por ID para experimentar
+                printf("\nInsertion Sort\n");
+                ExperimentoOrdenamiento(InsertionSort, CmpPorNombre);
+                printf("\nSelection Sort\n");
+                ExperimentoOrdenamiento(SelectionSort, CmpPorNombre);
+                printf("\nCocktail Sort\n");
+                ExperimentoOrdenamiento(CocktailSort, CmpPorNombre);
+
+
+                break;
+            case 7:
+                printf("\033[0;33mFuncionalidad en desarrollo...\033[0m\n");
                 break;
 
-            case 6:
+            case 8:
                 printf("Saliendo del programa...\n");
                 break;
 
@@ -94,17 +122,17 @@ void Menu(){
                 printf("Opcion invalida, seleccione nuevamente\n");
         }
 
-    } while (eleccion != 6);
+    } while (eleccion != 8);
 
 }
 
-void OrdenaCsv(){
+void OpcionOrdenarCsv(){
     
     int seleccionCriterio = 0;
     int seleccionAlgoritmo = 0;
     Comparador cmp = NULL;
 
-    if (!sePuedeIterar()) return; // No hay deportistas cargados
+    if (!HayDeportistasCargados()) return; // No hay deportistas cargados
  
     while (1) { 
         printf ("\033[0;33mSub-menu de ordenamiento: \033[0m\n");
@@ -125,7 +153,7 @@ void OrdenaCsv(){
         // Si elige 5 aquí, ordenamos por ID y salimos completamente de la función
         if (seleccionCriterio == 5) {
             printf ("Ordenando por ID antes de salir...\n"); 
-            bubbleSort(deportistas, cantItems, CmpPorID); 
+            BubbleSort(deportistas, cantItems, CmpPorID); 
             printf("Saliendo del submenú de ordenamiento...\n");
             return; // Volver al menú principal
         }
@@ -163,10 +191,10 @@ void OrdenaCsv(){
             }
 
             switch (seleccionAlgoritmo) {
-                case 1: bubbleSort(deportistas, cantItems, cmp); break;
-                case 2: insertionSort(deportistas, cantItems, cmp); break;
-                case 3: selectionSort(deportistas, cantItems, cmp); break;
-                case 4: cocktailSort(deportistas, cantItems, cmp); break;
+                case 1: BubbleSort(deportistas, cantItems, cmp); break;
+                case 2: InsertionSort(deportistas, cantItems, cmp); break;
+                case 3: SelectionSort(deportistas, cantItems, cmp); break;
+                case 4: CocktailSort(deportistas, cantItems, cmp); break;
                 default:
                     printf("Opcion invalida, seleccione nuevamente\n");
                     continue;
@@ -179,3 +207,78 @@ void OrdenaCsv(){
         }
     } 
 }
+
+void BuscarPorIDBinario(){
+
+    if (!HayDeportistasCargados()) return; // Validar que hay deportistas cargados
+    
+    printf ("\033[0;33mBusqueda por ID: \033[0m\n");
+    printf ("Ingresar -2 para salir de la busqueda por ID\n");
+
+    int targetID;
+
+    do {
+        printf ("Ingrese el ID del deportista que desea buscar: ");
+        while (scanf("%d", &targetID)!=1){
+            printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
+            if (targetID == -2){
+                printf ("Saliendo de busqueda por ID");
+                break;
+            }
+            while (getchar() != '\n'); // Limpiar el buffer de entrada
+        }
+
+        int index = BusquedaBinaria(deportistas, cantItems, targetID);
+
+        if (index != -1) {
+            printf ("\033[0;32mDeportista encontrado: [%d]\033[0m \n", targetID);
+            printf("%-5s %-25s %-15s %-10s %s\n", "ID", "Nombre", "Equipo", "Puntaje", "Competencias");
+            printf ("-------------------------------------------------------------\n");
+            printf("%-5d %-20s %-15s %-10.2f %d\n", 
+                deportistas[index].ID, 
+                deportistas[index].nombre, 
+                deportistas[index].equipo, 
+                deportistas[index].puntaje, 
+                deportistas[index].cantidadCompetencias
+            );
+            printf ("-------------------------------------------------------------\n");
+        }
+
+        else {
+            printf ("\033[0;31mDeportista no encontrado: [%d]\033[0m\n", targetID);
+        }
+    } while (targetID != -2);
+}
+
+void Ranking(int numRankingMostrar){
+    if (!HayDeportistasCargados()) return; // Validar que hay deportistas cargados
+
+    printf ("\033[0;33mRanking de deportistas por puntaje: \033[0m\n");
+    printf("%-5s %-25s %-15s %-10s %s\n", "ID", "Nombre", "Equipo", "Puntaje", "Competencias");
+    printf ("-------------------------------------------------------------\n");
+
+    // Crear un arreglo temporal para ordenar sin modificar el original
+    Deportista* temp = malloc(cantItems * sizeof(Deportista));
+    if (temp == NULL) {
+        printf("Error al asignar memoria para ranking.\n");
+        return;
+    }
+    memcpy(temp, deportistas, cantItems * sizeof(Deportista));
+
+    // Ordenar por puntaje usando el comparador
+    BubbleSort(temp, cantItems, CmpPorPuntaje);
+
+    for (int i = 0; i < 10 && i < cantItems; i++) {
+        printf("%-5d %-20s %-15s %-10.2f %d\n", 
+            temp[i].ID, 
+            temp[i].nombre, 
+            temp[i].equipo, 
+            temp[i].puntaje, 
+            temp[i].cantidadCompetencias
+        );
+    }
+    printf ("-------------------------------------------------------------\n");
+
+    free(temp);
+}
+

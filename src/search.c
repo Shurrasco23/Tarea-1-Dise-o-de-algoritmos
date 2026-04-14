@@ -1,6 +1,6 @@
 #include "../includes/commons.h" 
 
-int busquedaBinaria(Deportista *arr, int size, int targetID) {
+int BusquedaBinaria(Deportista *arr, int size, int targetID) {
     int left = 0;
     int right = size - 1;
 
@@ -22,7 +22,7 @@ int busquedaBinaria(Deportista *arr, int size, int targetID) {
     return -1; // No encontrado
 }
 
-int busquedaSecuencial(Deportista *arr, int size, int targetID) {
+int BusquedaSecuencial(Deportista *arr, int size, int targetID) {
     for (int i = 0; i < size; i++) {
         if (arr[i].ID == targetID) {
             return i; // Encontrado, retorna índice

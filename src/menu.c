@@ -100,7 +100,7 @@ void Menu(){
                 printf("\033[0;33mExperimento complejidad temporal algoritmos de ordenamiento\033[0m\n");
                 
                 printf("Bubble Sort\n");
-                ExperimentoOrdenamiento(BubbleSort, CmpPorNombre); // Ordenamos por ID para experimentar
+                ExperimentoOrdenamiento(BubbleSort, CmpPorNombre); 
                 printf("\nInsertion Sort\n");
                 ExperimentoOrdenamiento(InsertionSort, CmpPorNombre);
                 printf("\nSelection Sort\n");
@@ -215,6 +215,8 @@ void BuscarPorIDBinario(){
     printf ("\033[0;33mBusqueda por ID: \033[0m\n");
     printf ("Ingresar -2 para salir de la busqueda por ID\n");
 
+    BubbleSort(deportistas, cantItems, CmpPorID); // Asegurar que el arreglo esté ordenado por ID antes de la búsqueda binaria
+    printf ("\033[0;32mDeportistas ordenados por ID para búsqueda binaria.\033[0m\n");
     int targetID;
 
     do {
@@ -248,6 +250,9 @@ void BuscarPorIDBinario(){
             printf ("\033[0;31mDeportista no encontrado: [%d]\033[0m\n", targetID);
         }
     } while (targetID != -2);
+
+    FisherYatesShuffle(deportistas, cantItems); // Volver a mezclar el arreglo para que no quede ordenado por ID después de la búsqueda binaria
+    printf ("\033[0;32mDeportistas mezclados nuevamente después de la búsqueda binaria.\033[0m\n");
 }
 
 void Ranking(int numRankingMostrar){
@@ -266,9 +271,9 @@ void Ranking(int numRankingMostrar){
     memcpy(temp, deportistas, cantItems * sizeof(Deportista));
 
     // Ordenar por puntaje usando el comparador
-    BubbleSort(temp, cantItems, CmpPorPuntaje);
+    InvertirArreglo(temp, cantItems, CmpPorPuntaje);
 
-    for (int i = 0; i < 10 && i < cantItems; i++) {
+    for (int i = 0; i < numRankingMostrar && i < cantItems; i++) {
         printf("%-5d %-20s %-15s %-10.2f %d\n", 
             temp[i].ID, 
             temp[i].nombre, 

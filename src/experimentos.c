@@ -18,12 +18,18 @@ void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp, do
     end_t = clock();
     peor_caso_t = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
 
-    // Caso promedio: ordenar un arreglo desordenado (mezclar antes de ordenar)
-    FisherYatesShuffle(deportistas, cantItems);
-    start_t = clock();
-    algoritmo(deportistas, cantItems, cmp);
-    end_t = clock();
-    caso_promedio_t = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    // Caso promedio: ordenar un arreglo desordenado (mezclar antes de ordenar) 
+    // Dado que el arreglo es desordenado al azar, vamos a sacar 
+    // el promedio de 5 ejecuciones para tener una mejor estimación del caso promedio
+    
+    for (int i = 0; i < 5; i++) {
+        FisherYatesShuffle(deportistas, cantItems);
+        start_t = clock();
+        algoritmo(deportistas, cantItems, cmp);
+        end_t = clock();
+        caso_promedio_t += ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    }
+    caso_promedio_t /= 5.0; // Sacar el promedio dividiendo por la cantidad de ejecuciones
 
     resultados[0] = mejor_caso_t;
     resultados[1] = peor_caso_t;

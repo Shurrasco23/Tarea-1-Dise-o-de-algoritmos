@@ -95,23 +95,16 @@ void Menu(){
                 break;
             
             case 6:
-                if (!HayDeportistasCargados()) break; // Validar que hay deportistas cargados para experimentar
             
                 printf("\033[0;33mExperimento complejidad temporal algoritmos de ordenamiento\033[0m\n");
                 
-                printf("Bubble Sort\n");
-                ExperimentoOrdenamiento(BubbleSort, CmpPorNombre); 
-                printf("\nInsertion Sort\n");
-                ExperimentoOrdenamiento(InsertionSort, CmpPorNombre);
-                printf("\nSelection Sort\n");
-                ExperimentoOrdenamiento(SelectionSort, CmpPorNombre);
-                printf("\nCocktail Sort\n");
-                ExperimentoOrdenamiento(CocktailSort, CmpPorNombre);
+                GenerarCsvResultadosOrdenamiento();
 
 
                 break;
             case 7:
-                printf("\033[0;33mFuncionalidad en desarrollo...\033[0m\n");
+                
+                GenerarCsvResultadosBusqueda();
                 break;
 
             case 8:

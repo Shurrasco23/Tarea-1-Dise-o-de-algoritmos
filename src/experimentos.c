@@ -1,6 +1,6 @@
 #include "../includes/commons.h"
 
-void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp){
+void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp, double resultados[3]){
     clock_t start_t, end_t;
     double mejor_caso_t, peor_caso_t, caso_promedio_t;
 
@@ -24,12 +24,31 @@ void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp){
     algoritmo(deportistas, cantItems, cmp);
     end_t = clock();
     caso_promedio_t = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
-    printf("\033[0;34m[Experimento] Mejor caso: %.6f segundos\033[0m\n", mejor_caso_t);
-    printf("\033[0;34m[Experimento] Peor caso: %.6f segundos\033[0m\n", peor_caso_t);
-    printf("\033[0;34m[Experimento] Caso promedio: %.6f segundos\033[0m\n", caso_promedio_t);
 
+    resultados[0] = mejor_caso_t;
+    resultados[1] = peor_caso_t;
+    resultados[2] = caso_promedio_t;
+
+    return;
 }
 
-void ExperimentoBusqueda(AlgoritmoBusqueda algoritmo, int targetID){
-    // Implementar función para experimentar complejidad temporal de algoritmos de búsqueda
+double ExperimentoBusqueda(AlgoritmoBusqueda algoritmo, int targetID){
+    clock_t start_t, end_t;
+    double peor_caso_t;
+    int resultado, idPorEncontrar = 0; // ID que no existe en el arreglo para simular el peor caso
+
+    start_t = clock();
+    resultado = algoritmo(deportistas, cantItems, idPorEncontrar);
+    end_t = clock();
+    peor_caso_t = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    printf("\033[0;34m[Experimento] Búsqueda del ID %d: %s en %.6f segundos\033[0m\n", targetID, resultado != -1 ? "Encontrado" : "No encontrado", peor_caso_t);
+
+    start_t = clock();
+    resultado = algoritmo(deportistas, cantItems, idPorEncontrar);
+    end_t = clock();
+    peor_caso_t = ((double)(end_t - start_t)) / CLOCKS_PER_SEC;
+    printf("\033[0;34m[Experimento] Búsqueda del ID %d: %s en %.6f segundos\033[0m\n", idPorEncontrar, resultado != -1 ? "Encontrado" : "No encontrado", peor_caso_t);
+
+    return peor_caso_t;
 }
+

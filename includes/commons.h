@@ -46,6 +46,8 @@ void CreaCsv(int itemsPorCrear);
 void LeerCsvDeportistas(const char* filename);
 int ExtraerCantidadDeFilename(const char* filename);
 int ListarCsvDisponibles(int itemsPorCrear);
+void GenerarCsvResultadosOrdenamiento();
+void GenerarCsvResultadosBusqueda();
 
 // Menu 
 void Menu();
@@ -79,6 +81,6 @@ int BusquedaBinaria(Deportista *arr, int size, int targetID); // Busqueda binari
 int BusquedaSecuencial(Deportista *arr, int size, int targetID);
 
 // Experimentos
-void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp);
-void ExperimentoBusqueda(AlgoritmoBusqueda algoritmo, int targetID);
+void ExperimentoOrdenamiento(AlgoritmoOrdenamiento algoritmo, Comparador cmp, double resultados[3]);
+double ExperimentoBusqueda(AlgoritmoBusqueda algoritmo, int targetID);
 #endif

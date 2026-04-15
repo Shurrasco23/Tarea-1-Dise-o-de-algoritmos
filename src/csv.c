@@ -260,3 +260,84 @@ bool HayDeportistasCargados(){
     return true;
 }
 
+void GenerarCsvResultadosOrdenamiento(){
+    
+    // Resultados [0] = mejor caso, [1] = peor caso, [2] = caso promedio
+    double res_bubble[3], res_insertion[3], res_selection[3], res_cocktail[3];
+    int tamaño_muestra = 0;
+    char path[1024];
+
+    FILE* archivo = fopen("db/resultados/comparativa_ordenamiento.csv", "w");
+    if (archivo == NULL) {
+        printf("Error al crear db/resultados/comparativa_ordenamiento.csv\n");
+        return;
+    }
+    
+    // Hacemos un experimento por tamaño de muestra
+    FILE* opciones_muestras =  fopen("db/tools/opciones.csv", "r");
+    if (opciones_muestras == NULL) {
+        printf("Error al abrir db/tools/opciones.csv para generar resultados de ordenamiento.\n");
+        fclose(archivo);
+        return;
+    }
+
+    fprintf(archivo, 
+        "Tamaño muestra, Bubblesort mejor,Bubblesort peor, Bubblesort promedio, Insertionsort mejor, Insertionsort peor, Insertionsort promedio, Selectionsort mejor, Selectionsort peor, Selectionsort promedio, Cocktailsort mejor, Cocktailsort peor, Cocktailsort promedio\n");
+    // Recorremos archivo de opciones para generar un experimento por cada tamaño de muestra
+    while(fscanf(opciones_muestras, "%d", &tamaño_muestra) == 1){
+        snprintf(path, sizeof(path), "db/deportistas%d.csv", tamaño_muestra);
+        LeerCsvDeportistas(path);
+        printf("\033[0;35mGenerando resultados de ordenamiento para muestra de %d deportistas...\033[0m\n", tamaño_muestra);
+        ExperimentoOrdenamiento(BubbleSort, CmpPorID, res_bubble);
+        ExperimentoOrdenamiento(InsertionSort, CmpPorID, res_insertion);
+        ExperimentoOrdenamiento(SelectionSort, CmpPorID, res_selection);
+        ExperimentoOrdenamiento(CocktailSort, CmpPorID, res_cocktail);
+
+        fprintf(archivo, 
+            "%d, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f\n", 
+            tamaño_muestra,
+            res_bubble[0], res_bubble[1], res_bubble[2],
+            res_insertion[0], res_insertion[1], res_insertion[2],
+            res_selection[0], res_selection[1], res_selection[2],
+            res_cocktail[0], res_cocktail[1], res_cocktail[2]
+        );
+    }
+
+    fclose(opciones_muestras);
+    fclose(archivo); 
+
+}
+
+void GenerarCsvResultadosBusqueda(){
+    
+    char path[1024];
+    int tamaño_muestra = 0;
+
+    FILE* archivo = fopen("db/resultados/comparativa_busqueda.csv", "w");
+    if (archivo == NULL) {
+        printf("Error al crear db/resultados/comparativa_busqueda.csv\n");
+        return;
+    }
+
+    // Hacemos un experimento por tamaño de muestra
+    FILE* opciones_muestras =  fopen("db/tools/opciones.csv", "r");
+    if (opciones_muestras == NULL) {
+        printf("Error al abrir db/tools/opciones.csv para generar resultados de ordenamiento.\n");
+        fclose(archivo);
+        return;
+    }
+
+    fprintf(archivo, "Tamaño muestra,Busqueda binaria peor caso,Busqueda secuencial peor caso\n");
+    while (fscanf(opciones_muestras, "%d", &tamaño_muestra) == 1){
+        snprintf(path, sizeof(path), "db/deportistas%d.csv", tamaño_muestra);
+        LeerCsvDeportistas(path);
+        printf("\033[0;35mGenerando resultados de búsqueda para muestra de %d deportistas...\033[0m\n", tamaño_muestra);
+        double res_binaria = ExperimentoBusqueda(BusquedaBinaria, 0); // Buscamos un ID que no existe para simular el peor caso
+        double res_secuencial = ExperimentoBusqueda(BusquedaSecuencial, 0); // Buscamos un ID que no existe para simular el peor caso
+
+        fprintf(archivo,"%d,%.6f,%.6f\n", tamaño_muestra, res_binaria, res_secuencial);
+    }
+    fclose(opciones_muestras);
+    fclose(archivo);
+
+}

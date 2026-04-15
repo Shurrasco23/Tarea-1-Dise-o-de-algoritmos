@@ -294,7 +294,7 @@ void GenerarCsvResultadosOrdenamiento(){
         ExperimentoOrdenamiento(CocktailSort, CmpPorID, res_cocktail);
 
         fprintf(archivo, 
-            "%d, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f\n", 
+            "%d, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f, %.6f\n", 
             tamaño_muestra,
             res_bubble[0], res_bubble[1], res_bubble[2],
             res_insertion[0], res_insertion[1], res_insertion[2],

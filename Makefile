@@ -19,5 +19,7 @@ $(BUILD_DIR)/%.o: %.c
 clean:
 	rm -rf $(BUILD_DIR) $(EXECUTABLE)
 	
-.PHONY: run
+.PHONY: run plot
 
+plot: 
+	gnuplot ./plots/plot.gp

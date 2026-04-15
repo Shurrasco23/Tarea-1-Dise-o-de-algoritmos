@@ -86,6 +86,12 @@ void Menu(){
                 break;
 
             case 5:
+                
+                if (!HayDeportistasCargados()){
+                    printf ("\033[0;31mNo hay deportistas cargados. Por favor, cargue un CSV antes de mostrar el ranking.\033[0m\n");
+                    break;
+                }
+
                 printf("Ingrese la cantidad de deportistas a mostrar en el ranking: ");
                 while(scanf("%d", &numRankingMostrar)!=1 || numRankingMostrar <= 0 || numRankingMostrar > cantItems){
                     printf ("Ingrese un número válido, menor a %d: ", cantItems);
@@ -99,9 +105,9 @@ void Menu(){
                 printf("\033[0;33mExperimento complejidad temporal algoritmos de ordenamiento\033[0m\n");
                 
                 GenerarCsvResultadosOrdenamiento();
-
-
+                
                 break;
+            
             case 7:
                 
                 GenerarCsvResultadosBusqueda();
@@ -207,7 +213,7 @@ void BuscarPorIDBinario(){
     
     printf ("\033[0;33mBusqueda por ID: \033[0m\n");
     printf ("Ingresar -2 para salir de la busqueda por ID\n");
-
+    printf ("Ordenando por ID antes de realizar búsqueda binaria...\n");
     BubbleSort(deportistas, cantItems, CmpPorID); // Asegurar que el arreglo esté ordenado por ID antes de la búsqueda binaria
     printf ("\033[0;32mDeportistas ordenados por ID para búsqueda binaria.\033[0m\n");
     int targetID;
@@ -216,11 +222,12 @@ void BuscarPorIDBinario(){
         printf ("Ingrese el ID del deportista que desea buscar: ");
         while (scanf("%d", &targetID)!=1){
             printf ("\033[0;31mNo se admiten letras solo numeros: \033[0m");
-            if (targetID == -2){
-                printf ("Saliendo de busqueda por ID");
-                break;
-            }
             while (getchar() != '\n'); // Limpiar el buffer de entrada
+        }
+
+        if (targetID == -2){
+            printf ("Saliendo de busqueda por ID\n");
+            break;
         }
 
         int index = BusquedaBinaria(deportistas, cantItems, targetID);
@@ -244,7 +251,6 @@ void BuscarPorIDBinario(){
         }
     } while (targetID != -2);
 
-    FisherYatesShuffle(deportistas, cantItems); // Volver a mezclar el arreglo para que no quede ordenado por ID después de la búsqueda binaria
     printf ("\033[0;32mDeportistas mezclados nuevamente después de la búsqueda binaria.\033[0m\n");
 }
 
@@ -256,7 +262,7 @@ void Ranking(int numRankingMostrar){
     printf ("-------------------------------------------------------------\n");
 
     // Crear un arreglo temporal para ordenar sin modificar el original
-    Deportista* temp = malloc(cantItems * sizeof(Deportista));
+    Deportista* temp = malloc(cantItems * sizeof(Deportista)); // Asegurar que el tamaño sea correcto
     if (temp == NULL) {
         printf("Error al asignar memoria para ranking.\n");
         return;

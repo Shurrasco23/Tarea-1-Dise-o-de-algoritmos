@@ -171,8 +171,6 @@ int ListarCsvDisponibles(int itemsPorCrear){
             printf("%d.  %s\n", cont, line);
             fprintf(temp, "%s\n", line); // Guardar solo los que existen
             cont++;
-        } else {
-            printf("Opción %s no encontrada, se ha eliminado.\n", line);
         }
     }
 
@@ -183,11 +181,19 @@ int ListarCsvDisponibles(int itemsPorCrear){
     rename ("db/tools/opciones_temp.csv", "db/tools/opciones.csv"); // Renombrar archivo temporal
     return 0;
 }
+
 // Carga un CSV de
 void LeerCsvDeportistas(const char* filename){
 
     int currItem = 0;
     char linea[1024];
+
+    // Limpiar memoria de deportistas si ya hay un CSV cargado para evitar mezclas al cargar un nuevo CSV
+    if (deportistas != NULL) {
+        free(deportistas);
+        deportistas = NULL;
+        cantItems = 0;
+    }
 
     // Extraer cantidad de deportistas del nombre del archivo
     cantItems = ExtraerCantidadDeFilename(filename);

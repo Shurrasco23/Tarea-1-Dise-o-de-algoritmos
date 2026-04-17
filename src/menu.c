@@ -199,6 +199,9 @@ void OpcionOrdenarCsv(){
                     continue;
             }
 
+            if (seleccionCriterio == 3 || seleccionCriterio == 4) {
+                InvertirArreglo(deportistas, cantItems, cmp); // Para mostrar de mayor a menor en caso de puntaje o competencias
+            }
             
             showFirst10Deportistas(); 
             printf("\033[0;32mOrdenamiento completado exitosamente.\033[0m\n");
